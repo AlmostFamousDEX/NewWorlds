@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NewWorlds</string>
     <string name="title_activity_maps">Map</string>
+    <string name="titleText">LOCALit</string>
+    <string name="planButtonText">Plan a Trip</string>
+    <string name="addBizText">Add a Business</string>
 </resources>
