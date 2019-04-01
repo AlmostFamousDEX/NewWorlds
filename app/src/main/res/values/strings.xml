@@ -4,4 +4,8 @@
     <string name="titleText">LOCALit</string>
     <string name="planButtonText">Plan a Trip</string>
     <string name="addBizText">Add a Business</string>
+    <string name="locationPrompt">Where is your trip?</string>
+    <string name="locationInput">Location</string>
+    <string name="next">Next Page</string>
+    <string name="back">Back</string>
 </resources>
