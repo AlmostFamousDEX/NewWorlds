@@ -29,6 +29,7 @@
         android:layout_marginLeft="161dp"
         android:layout_marginTop="39dp"
         android:layout_marginBottom="32dp"
+        android:onClick="onClick"
         android:text="@string/planButtonText"
         app:layout_constraintBottom_toTopOf="@+id/addBizView"
         app:layout_constraintStart_toStartOf="parent"
