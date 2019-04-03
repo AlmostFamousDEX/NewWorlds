@@ -17,4 +17,8 @@
     <string name="businessName">Business Name</string>
     <string name="title_activity_maps_tester">Map</string>
     <string name="logoDescriptor">logo1</string>
+    <string name="businessType">Type of Business</string>
+    <string name="pictureUpload">Upload a Picture</string>
+    <string name="address">Address</string>
+    <string name="businessDescription">Description</string>
 </resources>
