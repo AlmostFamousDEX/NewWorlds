@@ -6,8 +6,15 @@
     <string name="addBizText">Add a Business</string>
     <string name="locationPrompt">Where is your trip?</string>
     <string name="locationInput">Location</string>
-    <string name="next">Next Page</string>
+    <string name="next">Next</string>
     <string name="back">Back</string>
+    <string name="string">Next</string>
+    <string name="preferencesQuestion">What do you want to do?</string>
+    <string name="preferences">What do you want to do?</string>
+    <string name="whatToDo">What do you want to do?</string>
+    <string name="food">Food</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="businessName">Business Name</string>
     <string name="title_activity_maps_tester">Map</string>
     <string name="logoDescriptor">logo1</string>
 </resources>
