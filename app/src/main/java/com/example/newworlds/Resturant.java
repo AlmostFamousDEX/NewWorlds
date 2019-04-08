@@ -4,10 +4,10 @@ public class Resturant {
     private String name;
     private String address;
     private String type;
-    private int ohours;
-    private int chours;
+    private double ohours;
+    private double chours;
 
-    public Resturant (String name,String type, String address, int ohours, int chours) //constructs a song object with a give title, artist, and year produced
+    public Resturant (String name,String type, String address, double ohours, double chours)
     {
         this.name=name;
         this.address =address;
@@ -28,5 +28,6 @@ public class Resturant {
     public String getType() {
         return type;
     }
-    public int getChours() {return  chours;}
+    public double getChours() {return  chours;}
+    public double getOhours() {return ohours;}
 }

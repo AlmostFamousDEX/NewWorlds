@@ -12,8 +12,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         InputStream is = getResources().openRawResource(R.raw.Restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
+        String songStr ="";
+        for (Resturant r : resturants) {
+            songStr += r.getName()+r.getType()+r.getAddress()+r.getOhours()+r.getChours()+"\n";
+        }
+
         boolean skip =false;
 
         String line ="";
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     String[] fields = line.split(",");
 
                     //read data
-                    //ADD LINE HERE
+                    resturants.add(new Resturant(fields[0],fields[1],fields[2],Double.parseDouble(fields[3]),Double.parseDouble(fields[4])));
                 }
                 else {
                     skip = true;
