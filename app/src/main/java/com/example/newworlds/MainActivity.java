@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void resturants(){
-        InputStream is = getResources().openRawResource(R.raw.Restaurants);
+        InputStream is = getResources().openRawResource(R.raw.restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String songStr ="";
