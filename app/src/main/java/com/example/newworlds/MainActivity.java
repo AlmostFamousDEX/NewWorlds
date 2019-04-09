@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d("tets","tets");
         Log.d("test", "arjun test");
         Log.d("test","once againn");
+
+        resturants();
+        String[] Diners = new String[resturants.size()];
+
+        for (int i=0; i<resturants.size(); i++)
+        {
+            Resturant diner = resturants.get(i);
+            Diners[i]=diner.getName();
+        }
     }
 
     public  void onClick(View v)
