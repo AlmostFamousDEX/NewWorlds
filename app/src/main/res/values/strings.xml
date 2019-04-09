@@ -23,6 +23,10 @@
     <string name="businessDescription">Description</string>
     <string name="inputBusinessName">Business Name</string>
     <string name="picUpload">Upload</string>
+    <string name="itineraryTitle">Itinerary</string>
+    <string name="restaurantChoiceText">Restaurant Choice</string>
+    <string name="educationChoiceText">Educational Choice</string>
+    <string name="entertainmentChoiceText">Entertainment Choice</string>
 
     <string name="spin">Spinner Example</string>
     <string-array name="food">
@@ -32,4 +36,5 @@
         <item>Mexican</item>
         <item>Chinese</item>
     </string-array>
+    <string name="title_activity_itinerary_plan">ItineraryPlan</string>
 </resources>
