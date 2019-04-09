@@ -41,17 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
     public  void onClick(View v)
     {
-        Intent intent = new Intent(this,MapsActivityTester.class);
+        Intent intent = new Intent(this,PreferencesActivity.class);
         startActivity(intent);
     }
     public void resturants(){
         InputStream is = getResources().openRawResource(R.raw.restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
-        String songStr ="";
-        for (Resturant r : resturants) {
-            songStr += r.getName()+r.getType()+r.getAddress()+r.getOhours()+r.getChours()+"\n";
-        }
 
         boolean skip =false;
 
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     String[] fields = line.split(",");
 
                     //read data
-                    resturants.add(new Resturant(fields[0],fields[1],fields[2],Double.parseDouble(fields[3]),Double.parseDouble(fields[4])));
+                    resturants.add(new Resturant(fields[0],fields[1],fields[2],fields[3],fields[4]));
                 }
                 else {
                     skip = true;
