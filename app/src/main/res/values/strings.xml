@@ -21,4 +21,15 @@
     <string name="pictureUpload">Upload a Picture</string>
     <string name="address">Address</string>
     <string name="businessDescription">Description</string>
+    <string name="inputBusinessName">Business Name</string>
+    <string name="picUpload">Upload</string>
+
+    <string name="spin">Spinner Example</string>
+    <string-array name="food">
+        <item>Italian</item>
+        <item>American</item>
+        <item>African</item>
+        <item>Mexican</item>
+        <item>Chinese</item>
+    </string-array>
 </resources>
