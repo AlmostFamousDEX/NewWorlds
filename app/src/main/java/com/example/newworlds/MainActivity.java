@@ -71,5 +71,6 @@ public class MainActivity extends AppCompatActivity {
             Log.wtf("MainActivity","ERROR reading data on line: "+line);
         }
     }
+
 }
 

@@ -27,6 +27,12 @@
     <string name="restaurantChoiceText">Restaurant Choice</string>
     <string name="educationChoiceText">Educational Choice</string>
     <string name="entertainmentChoiceText">Entertainment Choice</string>
+    <string name="educational">Educational Sites</string>
+    <string name="restaurantsLabel">Restaurants</string>
+    <string name="entertainmentLabel">Entertainment</string>
+    <string name="educationalLabel">Educational Sites</string>
+    <string name="options">Your Options</string>
+    <string name="restaurant1">Restaurant 1</string>
 
     <string name="spin">Spinner Example</string>
     <string-array name="food">
@@ -37,4 +43,16 @@
         <item>Chinese</item>
     </string-array>
     <string name="title_activity_itinerary_plan">ItineraryPlan</string>
+    <string-array name="entertainment">
+        <item>Concerts</item>
+        <item>Parks</item>
+        <item>Movie Theaters</item>
+        <item>Active Games</item>
+    </string-array>
+    <string-array name="education">
+        <item>Art Museums</item>
+        <item>Science Museums</item>
+        <item>Historical Museums</item>
+        <item>Schools</item>
+    </string-array>
 </resources>
