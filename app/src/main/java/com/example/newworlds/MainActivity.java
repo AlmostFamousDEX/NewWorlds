@@ -30,20 +30,27 @@ public class MainActivity extends AppCompatActivity {
         Log.d("test","once againn");
 
         resturants();
-        String[] Diners = new String[resturants.size()];
+         final String[] Diners = new String[resturants.size()];
 
         for (int i=0; i<resturants.size(); i++)
         {
             Resturant diner = resturants.get(i);
             Diners[i]=diner.getName();
         }
+        final String[] info1 = Diners;
+
+        final Button button = (Button) findViewById(R.id.planTripView);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
+                intent.putExtra("diner", Diners);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    public  void onClick(View v)
-    {
-        Intent intent = new Intent(this,PreferencesActivity.class);
-        startActivity(intent);
-    }
+
     public void resturants(){
         InputStream is = getResources().openRawResource(R.raw.restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
