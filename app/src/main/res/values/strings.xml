@@ -33,6 +33,9 @@
     <string name="educationalLabel">Educational Sites</string>
     <string name="options">Your Options</string>
     <string name="restaurant1">Restaurant 1</string>
+    <string name="addToItinerary">Add to My Itinerary!</string>
+    <string name="entertainment1">Entertainment 1</string>
+    <string name="educational1">Educational Site 1</string>
 
     <string name="spin">Spinner Example</string>
     <string-array name="food">
