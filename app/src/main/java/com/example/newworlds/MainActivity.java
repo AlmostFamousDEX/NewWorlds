@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0; i<resturants.size(); i++)
         {
             Resturant diner = resturants.get(i);
-            Diners[i]=diner.getName();
+            Diners[i]=diner.getType();
         }
         final String[] info1 = Diners;
 
