@@ -21,7 +21,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_preferences);
 
         Spinner spinner = findViewById(R.id.foodChoices);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.food, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);

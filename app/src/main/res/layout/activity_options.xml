@@ -94,8 +94,6 @@
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
@@ -103,7 +101,6 @@
         android:text="@string/addToItinerary"
         app:layout_constraintBottom_toTopOf="@+id/entertainmentLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/restaurant1"
         app:layout_constraintTop_toBottomOf="@+id/restaurantsLabel" />
 
     <TextView
