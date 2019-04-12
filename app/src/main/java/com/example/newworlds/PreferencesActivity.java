@@ -1,5 +1,6 @@
 package com.example.newworlds;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,11 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        String[] diners = bundle.getStringArray("diner");
         setContentView(R.layout.activity_preferences);
 
         Spinner spinner = findViewById(R.id.foodChoices);
