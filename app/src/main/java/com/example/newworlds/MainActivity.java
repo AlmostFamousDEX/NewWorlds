@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
+    private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
+    private ArrayList<Education> education = new ArrayList<Education>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,24 @@ public class MainActivity extends AppCompatActivity {
         Log.d("test","once againn");
 
         resturants();
-         final String[] Diners = new String[resturants.size()];
+        final String[] Diners = new String[resturants.size()];
+        final String[] Shows = new String[entertainment.size()];
+        final String[] Sites = new String[education.size()];
 
         for (int i=0; i<resturants.size(); i++)
         {
             Resturant diner = resturants.get(i);
             Diners[i]=diner.getType();
+        }
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            Entertainment show = entertainment.get(i);
+            Shows[i]=show.getType();
+        }
+        for (int i=0; i<education.size(); i++)
+        {
+            Education site = education.get(i);
+            Sites[i]=site.getType();
         }
         final String[] info1 = Diners;
 
@@ -43,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
                 intent.putExtra("diner", Diners);
+                intent.putExtra("show", Shows);
+                intent.putExtra("site", Sites);
                 startActivity(intent);
             }
         });
@@ -67,6 +83,60 @@ public class MainActivity extends AppCompatActivity {
 
                     //read data
                     resturants.add(new Resturant(fields[0],fields[1],fields[2],fields[3],fields[4]));
+                }
+                else {
+                    skip = true;
+                }
+            }
+        }
+        catch (IOException e){
+            Log.wtf("MainActivity","ERROR reading data on line: "+line);
+        }
+    }
+    public void entertainment(){
+        InputStream is = getResources().openRawResource(R.raw.entertainment);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+
+        boolean skip =false;
+
+        String line ="";
+        try {
+            while ((line=reader.readLine()) != null){
+                if (skip)
+                {
+                    //split by ,
+                    String[] fields = line.split(",");
+
+                    //read data
+                    entertainment.add(new Entertainment(fields[0],fields[1],fields[2],fields[3],fields[4]));
+                }
+                else {
+                    skip = true;
+                }
+            }
+        }
+        catch (IOException e){
+            Log.wtf("MainActivity","ERROR reading data on line: "+line);
+        }
+    }
+    public void education(){
+        InputStream is = getResources().openRawResource(R.raw.educational);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+
+        boolean skip =false;
+
+        String line ="";
+        try {
+            while ((line=reader.readLine()) != null){
+                if (skip)
+                {
+                    //split by ,
+                    String[] fields = line.split(",");
+
+                    //read data
+                    education.add(new Education(fields[0],fields[1],fields[2],fields[3],fields[4]));
                 }
                 else {
                     skip = true;
