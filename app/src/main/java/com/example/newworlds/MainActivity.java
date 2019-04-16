@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("test","once againn");
 
         resturants();
+        entertainment();
+        education();
         final String[] Diners = new String[resturants.size()];
         final String[] Shows = new String[entertainment.size()];
         final String[] Sites = new String[education.size()];
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         catch (IOException e){
-            Log.wtf("MainActivity","ERROR reading data on line: "+line);
+            Log.wtf("MainActivity-restaurants","ERROR reading data on line: "+line);
         }
     }
     public void entertainment(){
