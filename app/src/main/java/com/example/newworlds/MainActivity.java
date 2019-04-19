@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         resturants();
         entertainment();
         education();
+
         final String[] Diners = new String[resturants.size()];
         final String[] Shows = new String[entertainment.size()];
         final String[] Sites = new String[education.size()];
@@ -41,17 +44,51 @@ public class MainActivity extends AppCompatActivity {
         {
             Resturant diner = resturants.get(i);
             Diners[i]=diner.getType();
+            //Arrays.sort(Diners);
         }
         for (int i=0; i<entertainment.size(); i++)
         {
             Entertainment show = entertainment.get(i);
             Shows[i]=show.getType();
+            //Arrays.sort(Shows);
         }
         for (int i=0; i<education.size(); i++)
         {
             Education site = education.get(i);
             Sites[i]=site.getType();
+            //Arrays.sort(Sites);
         }
+/*
+        List<String> diners = new ArrayList<>();
+        List<String> shows = new ArrayList<>();
+        List<String> sites = new ArrayList<>();
+
+
+        for (int i=0; i<Diners.length; i++)
+        {
+            for (int j=0;j<Diners.length;j++) {
+                if (Diners[i] != Diners[j]) {
+                    diners.add(Diners[i]);
+                }
+            }
+        }
+        for (int i=0; i<Shows.length; i++)
+        {
+            for (int j=0;j<Shows.length;j++) {
+                if (Shows[i] != Shows[j]) {
+                    shows.add(Shows[i]);
+                }
+            }
+        }
+        for (int i=0; i<Sites.length; i++)
+        {
+            for (int j=0;j<Sites.length;j++) {
+                if (Sites[i] != Sites[j]) {
+                    sites.add(Sites[i]);
+                }
+            }
+        }
+        */
         final String[] info1 = Diners;
 
         final Button button = (Button) findViewById(R.id.planTripView);
