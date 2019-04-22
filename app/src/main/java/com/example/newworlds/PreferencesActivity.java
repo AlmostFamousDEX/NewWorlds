@@ -22,17 +22,17 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         String[] diners = bundle.getStringArray("diner");
         if (diners[0]!="")
         {
-            Log.d("MyTest", "good");
+            Log.d("MyTest", "good1");
         }
         String[] shows = bundle.getStringArray("show");
         if (shows[0]!="")
         {
-            Log.d("MyTest", "good");
+            Log.d("MyTest", "good2");
         }
         String[] sites = bundle.getStringArray("site");
         if (sites[0]!="")
         {
-            Log.d("MyTest", "good");
+            Log.d("MyTest", "good3");
         }
 
         Spinner spinner = findViewById(R.id.foodChoices);

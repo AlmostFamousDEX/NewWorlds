@@ -44,34 +44,53 @@ public class MainActivity extends AppCompatActivity {
         {
             Resturant diner = resturants.get(i);
             Diners[i]=diner.getType();
-            //Arrays.sort(Diners);
         }
+        Arrays.sort(Diners);
         for (int i=0; i<entertainment.size(); i++)
         {
             Entertainment show = entertainment.get(i);
             Shows[i]=show.getType();
-            //Arrays.sort(Shows);
         }
+        Arrays.sort(Shows);
         for (int i=0; i<education.size(); i++)
         {
             Education site = education.get(i);
             Sites[i]=site.getType();
-            //Arrays.sort(Sites);
         }
+        Arrays.sort(Sites);
 /*
         List<String> diners = new ArrayList<>();
         List<String> shows = new ArrayList<>();
         List<String> sites = new ArrayList<>();
+        */
+        //display(Diners);
 
 
-        for (int i=0; i<Diners.length; i++)
+
+
+        int delete=0;
+        for (int i=1; i<Diners.length; i++)
         {
-            for (int j=0;j<Diners.length;j++) {
-                if (Diners[i] != Diners[j]) {
-                    diners.add(Diners[i]);
+            if (Diners[i]==Diners[i-1]) {
+                Diners[i] = "~";
+            }
+        }
+        for (int l=0;l<Diners.length;l++){
+            if (Diners[l]=="~"){
+                delete++;
+            }
+        }
+        final String[] diners = new String[Diners.length-delete];
+
+        for (int j=0;j<Diners.length;j++)
+        {
+            for (int k=0;k<diners.length;k++){
+                if (Diners[j]!="~"){
+                    Diners[j]=diners[k];
                 }
             }
         }
+        /*
         for (int i=0; i<Shows.length; i++)
         {
             for (int j=0;j<Shows.length;j++) {
@@ -184,6 +203,11 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (IOException e){
             Log.wtf("MainActivity","ERROR reading data on line: "+line);
+        }
+    }
+    public static void display(String[] array){
+        for (int j=0;j<array.length;j++){
+            Log.d("EdenAllen",array[j]+"/t");
         }
     }
 
