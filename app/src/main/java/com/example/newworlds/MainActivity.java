@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
                 delete++;
             }
         }
-        final String[] diners = new String[Diners.length-delete];
+        String[] diners = new String[Diners.length-delete];
 
         for (int j=0;j<Diners.length;j++)
         {
             for (int k=0;k<diners.length;k++){
                 if (Diners[j]!="~"){
-                    Diners[j]=diners[k];
+                    diners[k]=Diners[j];
                 }
             }
         }
