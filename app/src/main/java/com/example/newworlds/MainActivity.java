@@ -92,16 +92,18 @@ public class MainActivity extends AppCompatActivity {
         String[] diners = new String[Diners.length-delete];
         Log.d("AlexLength",String.valueOf(Diners.length-delete));
 
+        int counter=0;
+
         for (int j=0;j<Diners.length;j++)
         {
-            for (int k=0;k<diners.length;k++){
-                if (!(Diners[j].equals("XX"))){
-                    diners[k]=Diners[j];
-                }
+            if (!(Diners[j].equals("XX")))
+            {
+                diners[counter]=Diners[j];
+                counter++;
             }
         }
 
-        display2(diners);
+        //display2(diners);
 
         final String[] diners1 = diners;
         /*
