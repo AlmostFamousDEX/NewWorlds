@@ -73,16 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i=1; i<Diners.length; i++)
         {
-            if (Diners[i]==Diners[i-1]) {
+            if (Diners[i].equals(Diners[i-1])) {
                 Log.d("a repeat!!","yeee");
-                Diners[i] = "~";
+                Diners[i] = "XXX";
             }
             else{
                 Log.d("not a repeat","yerrrr");
             }
         }
         for (int l=0;l<Diners.length;l++){
-            if (Diners[l]=="~"){
+            if (Diners[l].equals(("XXX"))){
                 delete++;
             }
         }
@@ -90,11 +90,12 @@ public class MainActivity extends AppCompatActivity {
         display(Diners);
 
         String[] diners = new String[Diners.length-delete];
+        Log.d("AlexLength",String.valueOf(Diners.length-delete));
 
         for (int j=0;j<Diners.length;j++)
         {
             for (int k=0;k<diners.length;k++){
-                if (Diners[j]!="~"){
+                if (!(Diners[j].equals("XXX"))){
                     diners[k]=Diners[j];
                 }
             }
@@ -220,12 +221,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public static void display(String[] array){
         for (int j=0;j<array.length;j++){
-            Log.d("EdenAllen",array[j]+"/t");
+            Log.d("EdenAllen",array[j]);
         }
     }
     public static void display2(String[] array){
         for (int j=0;j<array.length;j++){
-            Log.d("AllenEden",array[j]+"/t");
+            Log.d("AllenEden",array[j]);
         }
     }
 
