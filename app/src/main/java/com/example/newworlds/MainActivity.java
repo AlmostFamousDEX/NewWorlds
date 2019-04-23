@@ -63,16 +63,22 @@ public class MainActivity extends AppCompatActivity {
         List<String> shows = new ArrayList<>();
         List<String> sites = new ArrayList<>();
         */
-        //display(Diners);
+        display(Diners);
 
 
 
 
-        int delete=0;
+        int delete;
+        delete=0;
+
         for (int i=1; i<Diners.length; i++)
         {
             if (Diners[i]==Diners[i-1]) {
+                Log.d("a repeat!!","yeee");
                 Diners[i] = "~";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
             }
         }
         for (int l=0;l<Diners.length;l++){
@@ -80,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 delete++;
             }
         }
+
+        display(Diners);
+
         String[] diners = new String[Diners.length-delete];
 
         for (int j=0;j<Diners.length;j++)
@@ -90,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+
+        display2(diners);
+
+        final String[] diners1 = diners;
         /*
         for (int i=0; i<Shows.length; i++)
         {
@@ -114,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
-                intent.putExtra("diner", Diners);
+                intent.putExtra("diner", diners1);
                 intent.putExtra("show", Shows);
                 intent.putExtra("site", Sites);
                 startActivity(intent);
@@ -208,6 +221,11 @@ public class MainActivity extends AppCompatActivity {
     public static void display(String[] array){
         for (int j=0;j<array.length;j++){
             Log.d("EdenAllen",array[j]+"/t");
+        }
+    }
+    public static void display2(String[] array){
+        for (int j=0;j<array.length;j++){
+            Log.d("AllenEden",array[j]+"/t");
         }
     }
 
