@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         {
             if (Diners[i].equals(Diners[i-1])) {
                 Log.d("a repeat!!","yeee");
-                Diners[i] = "XXX";
+                Diners[i] = "XX";
             }
             else{
                 Log.d("not a repeat","yerrrr");
             }
         }
         for (int l=0;l<Diners.length;l++){
-            if (Diners[l].equals(("XXX"))){
+            if (Diners[l].equals(("XX"))){
                 delete++;
             }
         }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         for (int j=0;j<Diners.length;j++)
         {
             for (int k=0;k<diners.length;k++){
-                if (!(Diners[j].equals("XXX"))){
+                if (!(Diners[j].equals("XX"))){
                     diners[k]=Diners[j];
                 }
             }
