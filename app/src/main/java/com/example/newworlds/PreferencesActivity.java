@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -52,11 +53,25 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner3.setAdapter(adapter3);
         spinner3.setOnItemSelectedListener(this);
+
+        final Button button2 = (Button) findViewById(R.id.next);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent2 = new Intent(v.getContext(),OptionsActivity.class);
+                intent2.putExtra("does this", "work?");
+                startActivity(intent2);
+            }
+        });
+
+        String[] restaurantType;
+        String[] entertainmentType;
+        String[] educationType;
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
+        Log.d("user's selection",text);
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 

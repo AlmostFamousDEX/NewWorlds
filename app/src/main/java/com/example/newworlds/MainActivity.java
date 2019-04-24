@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        //restaurants
         int delete;
         delete=0;
 
@@ -89,10 +89,12 @@ public class MainActivity extends AppCompatActivity {
 
         display(Diners);
 
-        String[] diners = new String[Diners.length-delete];
+        String[] diners = new String[Diners.length-delete+1];
         Log.d("AlexLength",String.valueOf(Diners.length-delete));
 
-        int counter=0;
+        diners[0]="None Selected";
+
+        int counter=1;
 
         for (int j=0;j<Diners.length;j++)
         {
@@ -103,9 +105,87 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        //display2(diners);
-
         final String[] diners1 = diners;
+
+        //entertainment
+        int delete2;
+        delete2=0;
+
+        for (int i=1; i<Shows.length; i++)
+        {
+            if (Shows[i].equals(Shows[i-1])) {
+                Log.d("a repeat!!","yeee");
+                Shows[i] = "XX";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
+            }
+        }
+        for (int l=0;l<Shows.length;l++){
+            if (Shows[l].equals(("XX"))){
+                delete2++;
+            }
+        }
+
+        display(Shows);
+
+        String[] shows = new String[Shows.length-delete2+1];
+        Log.d("AlexLength2",String.valueOf(Shows.length-delete2));
+
+        shows[0]="None Selected";
+
+        int counter2=1;
+
+        for (int j=0;j<Shows.length;j++)
+        {
+            if (!(Shows[j].equals("XX")))
+            {
+                shows[counter2]=Shows[j];
+                counter2++;
+            }
+        }
+        final String[] shows1 = shows;
+
+        //education
+        int delete3;
+        delete3=0;
+
+        for (int i=1; i<Sites.length; i++)
+        {
+            if (Sites[i].equals(Sites[i-1])) {
+                Log.d("a repeat!!","yeee");
+                Sites[i] = "XX";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
+            }
+        }
+        for (int l=0;l<Sites.length;l++){
+            if (Sites[l].equals(("XX"))){
+                delete3++;
+            }
+        }
+
+        display(Sites);
+
+        String[] sites = new String[Sites.length-delete3+1];
+        Log.d("AlexLength3",String.valueOf(Sites.length-delete3));
+
+        sites[0]="None Selected";
+
+        int counter3=1;
+
+        for (int j=0;j<Sites.length;j++)
+        {
+            if (!(Sites[j].equals("XX")))
+            {
+                sites[counter3]=Sites[j];
+                counter3++;
+            }
+        }
+
+        final String[] sites1 = sites;
+
         /*
         for (int i=0; i<Shows.length; i++)
         {
@@ -131,11 +211,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
                 intent.putExtra("diner", diners1);
-                intent.putExtra("show", Shows);
-                intent.putExtra("site", Sites);
+                intent.putExtra("show", shows1);
+                intent.putExtra("site", sites1);
                 startActivity(intent);
             }
         });
+
+
 
     }
 
