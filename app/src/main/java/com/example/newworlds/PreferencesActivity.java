@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class PreferencesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,14 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
+        final ArrayList<String> restaurantType = new ArrayList<>();
+        final ArrayList<String> entertainmentType = new ArrayList<>();
+        final ArrayList<String> educationType = new ArrayList<>();
+
+        //String[] restaurantType;
+        //String[] entertainmentType;
+        //String[] educationType;
 
         String[] diners = bundle.getStringArray("diner");
         if (diners[0]!="")
@@ -40,19 +50,62 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String foodSelection = parent.getItemAtPosition(position).toString();
+                //String text2 = parent.getSelectedItem().toString();
+                Log.d("foodSelection",foodSelection);
+                //Log.d("my selectionnnn",text2);
+                Toast.makeText(parent.getContext(), foodSelection, Toast.LENGTH_SHORT).show();
+                restaurantType.add(foodSelection);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Spinner spinner2 = findViewById(R.id.entertainmentChoices);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, shows);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(this);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String entertainmentSelection = parent.getItemAtPosition(position).toString();
+                //String text2 = parent.getSelectedItem().toString();
+                Log.d("entertainmentSelection",entertainmentSelection);
+                //Log.d("my selectionnnn",text2);
+                Toast.makeText(parent.getContext(), entertainmentSelection, Toast.LENGTH_SHORT).show();
+                entertainmentType.add(entertainmentSelection);
+            }
+
+            //@Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Spinner spinner3 = findViewById(R.id.educationalChoices);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(PreferencesActivity.this, android.R.layout.simple_spinner_item, sites);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner3.setAdapter(adapter3);
-        spinner3.setOnItemSelectedListener(this);
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String educationSelection = parent.getItemAtPosition(position).toString();
+                //String text2 = parent.getSelectedItem().toString();
+                Log.d("educationSelection",educationSelection);
+                //Log.d("my selectionnnn",text2);
+                Toast.makeText(parent.getContext(), educationSelection, Toast.LENGTH_SHORT).show();
+                educationType.add(educationSelection);
+            }
+
+            //@Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         final Button button2 = (Button) findViewById(R.id.next);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -63,16 +116,13 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
-        String[] restaurantType;
-        String[] entertainmentType;
-        String[] educationType;
+
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Log.d("user's selection",text);
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
