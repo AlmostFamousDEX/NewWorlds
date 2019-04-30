@@ -1,7 +1,7 @@
 package com.example.newworlds;
 
 import android.app.Application;
-import android.os.Bundle;
+
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -15,11 +15,15 @@ public class Controller extends Application {
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> education = new ArrayList<Education>();
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate() {
+
+        super.onCreate();
 
         resturants();
         entertainment();
         education();
+
+        Log.d("AlexTestController","Good");
 
     }
     public void resturants(){
