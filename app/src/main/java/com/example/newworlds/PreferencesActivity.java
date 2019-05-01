@@ -115,15 +115,22 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
-        final Button button2 = (Button) findViewById(R.id.next);
+        /*final Button button2 = (Button) findViewById(R.id.next);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent2 = new Intent(v.getContext(),OptionsActivity.class);
                 intent2.putExtra("does this", "work?");
                 startActivity(intent2);
             }
-        });
+        });*/
 
+        final Button buttonOp = (Button) findViewById(R.id.nextOp);
+        buttonOp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent=new Intent(PreferencesActivity.this,OptionsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
