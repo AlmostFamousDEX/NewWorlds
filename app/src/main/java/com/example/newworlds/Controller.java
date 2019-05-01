@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Controller extends Application {
     private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
@@ -106,6 +107,129 @@ public class Controller extends Application {
         catch (IOException e){
             Log.wtf("MainActivity","ERROR reading data on line: "+line);
         }
+    }
+    public String[] getEducationType(){
+        String[] Sites = new String[education.size()];
+        for (int i=0; i<education.size(); i++)
+        {
+            Education site = education.get(i);
+            Sites[i]=site.getType();
+        }
+        Arrays.sort(Sites);
+        int delete3=0;
+
+        for (int i=1; i<Sites.length; i++)
+        {
+            if (Sites[i].equals(Sites[i-1])) {
+                Log.d("a repeat!!","yeee");
+                Sites[i] = "XX";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
+            }
+        }
+        for (int l=0;l<Sites.length;l++){
+            if (Sites[l].equals(("XX"))){
+                delete3++;
+            }
+        }
+        String[] sites = new String[Sites.length-delete3+1];
+        sites[0]="None Selected";
+
+        int counter3=1;
+
+        for (int j=0;j<Sites.length;j++)
+        {
+            if (!(Sites[j].equals("XX")))
+            {
+                sites[counter3]=Sites[j];
+                counter3++;
+            }
+        }
+
+        return sites;
+    }
+    public String[] getResturantType(){
+        String[] Sites = new String[resturants.size()];
+        for (int i=0; i<resturants.size(); i++)
+        {
+            Resturant site = resturants.get(i);
+            Sites[i]=site.getType();
+        }
+        Arrays.sort(Sites);
+        int delete3=0;
+
+        for (int i=1; i<Sites.length; i++)
+        {
+            if (Sites[i].equals(Sites[i-1])) {
+                Log.d("a repeat!!","yeee");
+                Sites[i] = "XX";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
+            }
+        }
+        for (int l=0;l<Sites.length;l++){
+            if (Sites[l].equals(("XX"))){
+                delete3++;
+            }
+        }
+        String[] sites = new String[Sites.length-delete3+1];
+        sites[0]="None Selected";
+
+        int counter3=1;
+
+        for (int j=0;j<Sites.length;j++)
+        {
+            if (!(Sites[j].equals("XX")))
+            {
+                sites[counter3]=Sites[j];
+                counter3++;
+            }
+        }
+
+        return sites;
+    }
+    public String[] getEntertainmentType(){
+        String[] Sites = new String[entertainment.size()];
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            Entertainment site = entertainment.get(i);
+            Sites[i]=site.getType();
+        }
+        Arrays.sort(Sites);
+        int delete3=0;
+
+        for (int i=1; i<Sites.length; i++)
+        {
+            if (Sites[i].equals(Sites[i-1])) {
+                Log.d("a repeat!!","yeee");
+                Sites[i] = "XX";
+            }
+            else{
+                Log.d("not a repeat","yerrrr");
+            }
+        }
+        for (int l=0;l<Sites.length;l++){
+            if (Sites[l].equals(("XX"))){
+                delete3++;
+            }
+        }
+        String[] sites = new String[Sites.length-delete3+1];
+        sites[0]="None Selected";
+
+        int counter3=1;
+
+        for (int j=0;j<Sites.length;j++)
+        {
+            if (!(Sites[j].equals("XX")))
+            {
+                sites[counter3]=Sites[j];
+                counter3++;
+            }
+        }
+
+        return sites;
     }
     //final Controller aController = (Controller) getApplicationContext();
     //

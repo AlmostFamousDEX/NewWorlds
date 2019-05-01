@@ -210,9 +210,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
-                intent.putExtra("diner", diners1);
-                intent.putExtra("show", shows1);
-                intent.putExtra("site", sites1);
+                //intent.putExtra("diner", diners1);
+                //intent.putExtra("show", shows1);
+                //intent.putExtra("site", sites1);
                 startActivity(intent);
             }
         });
