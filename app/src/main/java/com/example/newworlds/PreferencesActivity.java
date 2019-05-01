@@ -3,6 +3,8 @@ package com.example.newworlds;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +24,8 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
+        //EDEN MOVE THIS TO THE PREFERENCES ACTIVITY
+
         final ArrayList<String> restaurantType = new ArrayList<>();
         final ArrayList<String> entertainmentType = new ArrayList<>();
         final ArrayList<String> educationType = new ArrayList<>();
@@ -30,9 +34,6 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         //String[] entertainmentType;
         //String[] educationType;
 
-        final Controller aController = (Controller) getApplicationContext();
-
-        /*
         String[] diners = bundle.getStringArray("diner");
         if (diners[0]!="")
         {
@@ -48,14 +49,9 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         {
             Log.d("MyTest", "good3");
         }
-        */
-
-        String[] diners1 = aController.getResturantType();
-        String[] shows1 = aController.getEntertainmentType();
-        String[] sites1 = aController.getEducationType();
 
         Spinner spinner = findViewById(R.id.foodChoices);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
@@ -76,7 +72,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         });
 
         Spinner spinner2 = findViewById(R.id.entertainmentChoices);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, shows1);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, shows);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
@@ -96,7 +92,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         });
 
         Spinner spinner3 = findViewById(R.id.educationalChoices);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(PreferencesActivity.this, android.R.layout.simple_spinner_item, sites1);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(PreferencesActivity.this, android.R.layout.simple_spinner_item, sites);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner3.setAdapter(adapter3);
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -115,22 +111,8 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
-        /*final Button button2 = (Button) findViewById(R.id.next);
-        button2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent2 = new Intent(v.getContext(),OptionsActivity.class);
-                intent2.putExtra("does this", "work?");
-                startActivity(intent2);
-            }
-        });*/
+        ;
 
-        final Button buttonOp = (Button) findViewById(R.id.nextOp);
-        buttonOp.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent=new Intent(PreferencesActivity.this,OptionsActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
@@ -144,4 +126,20 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    private void initRecyclerView(){
+        //Log.d(TAG,"initRecyclerView: init recyclerview.");
+        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, )
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+    private void initRecyclerView(){
+        //Log.d(TAG,"initRecyclerView: init recyclerview.");
+        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
 }
