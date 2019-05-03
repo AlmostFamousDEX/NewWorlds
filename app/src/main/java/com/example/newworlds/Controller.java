@@ -231,6 +231,130 @@ public class Controller extends Application {
 
         return sites;
     }
+
+    public String[] getNameFromResturantType(String type)
+    {
+        int counter=0;
+        for (int i=0; i<resturants.size(); i++)
+        {
+            Resturant site = resturants.get(i);
+            if (site.getType().equals(type))
+            {
+                counter++;
+            }
+        }
+        int counter2=0;
+        String[] dummy = new String[counter];
+        for (int k=0; k<resturants.size(); k++)
+        {
+            Resturant site = resturants.get(k);
+            if (site.getType().equals(type))
+            {
+                dummy[counter2]=site.getName();
+                counter2++;
+            }
+        }
+        return dummy;
+    }
+
+    public String[] getNameFromEducationType(String type)
+    {
+        int counter=0;
+        for (int i=0; i<education.size(); i++)
+        {
+            Education site = education.get(i);
+            if (site.getType().equals(type))
+            {
+                counter++;
+            }
+        }
+        int counter2=0;
+        String[] dummy = new String[counter];
+        for (int k=0; k<education.size(); k++)
+        {
+            Education site = education.get(k);
+            if (site.getType().equals(type))
+            {
+                dummy[counter2]=site.getName();
+                counter2++;
+            }
+        }
+        return dummy;
+    }
+
+    public String[] getNameFromEntertainmentType(String type)
+    {
+        int counter=0;
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            Entertainment site = entertainment.get(i);
+            if (site.getType().equals(type))
+            {
+                counter++;
+            }
+        }
+        int counter2=0;
+        String[] dummy = new String[counter];
+        for (int k=0; k<entertainment.size(); k++)
+        {
+            Entertainment site = entertainment.get(k);
+            if (site.getType().equals(type))
+            {
+                dummy[counter2]=site.getName();
+                counter2++;
+            }
+        }
+        return dummy;
+    }
+
+    public String[] getInfoResturant(String name)
+    {
+        String[] dummy = new String[3];
+        for (int i=0; i<resturants.size(); i++)
+        {
+            Resturant site = resturants.get(i);
+            if (site.getName().equals(name))
+            {
+                dummy[0]=site.getAddress();
+                dummy[1]=site.getOhours();
+                dummy[2]=site.getChours();
+            }
+        }
+        return dummy;
+    }
+
+    public String[] getInfoEntertainment(String name)
+    {
+        String[] dummy = new String[3];
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            Entertainment site = entertainment.get(i);
+            if (site.getName().equals(name))
+            {
+                dummy[0]=site.getAddress();
+                dummy[1]=site.getOhours();
+                dummy[2]=site.getChours();
+            }
+        }
+        return dummy;
+    }
+
+    public String[] getInfoEducation(String name)
+    {
+        String[] dummy = new String[3];
+        for (int i=0; i<education.size(); i++)
+        {
+            Education site = education.get(i);
+            if (site.getName().equals(name))
+            {
+                dummy[0]=site.getAddress();
+                dummy[1]=site.getOhours();
+                dummy[2]=site.getChours();
+            }
+        }
+        return dummy;
+    }
+
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
