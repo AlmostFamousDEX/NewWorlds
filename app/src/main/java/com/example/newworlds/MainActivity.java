@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> education = new ArrayList<Education>();
 
+    private String TAG="MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,8 +208,8 @@ public class MainActivity extends AppCompatActivity {
         */
         final String[] info1 = Diners;
 
-        final Button button = (Button) findViewById(R.id.planTripView);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button planTrip = (Button) findViewById(R.id.planTripView);
+        planTrip.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent=new Intent(v.getContext(),PreferencesActivity.class);
                 //intent.putExtra("diner", diners1);
@@ -217,8 +219,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        //being used for recyclerview. May move later -Eden
+        final Button addBiz = (Button) findViewById(R.id.addBizView);
+        addBiz.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Log.d(TAG,"in addBizView button");
+                Intent intent2 =new Intent(view.getContext(), RecyclerActivity.class);
+                //intent.putExtra("diner", diners1);
+                //intent.putExtra("show", shows1);
+                //intent.putExtra("site", sites1);
+                startActivity(intent2);
+            }
+        });
 
+    }
+    /*
+    public void bizClick(View v){
+        Log.d(TAG,"in addBizView button");
+        Intent intent =new Intent(this, RecyclerActivity.class);
+        //intent.putExtra("diner", diners1);
+        //intent.putExtra("show", shows1);
+        //intent.putExtra("site", sites1);
+        startActivity(intent);
+    }
+    */
 
     public void resturants(){
         InputStream is = getResources().openRawResource(R.raw.restaurants);
