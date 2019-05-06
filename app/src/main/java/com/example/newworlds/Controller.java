@@ -237,6 +237,9 @@ public class Controller extends Application {
 
         return sites;
     }
+    public ArrayList<Resturant> getRestaurants(){
+        return resturants;
+    }
 
     public String[] getNameFromResturantType(String type)
     {
