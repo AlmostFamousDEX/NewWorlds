@@ -50,7 +50,6 @@
         android:layout_marginEnd="248dp"
         android:layout_marginRight="248dp"
         android:layout_marginBottom="57dp"
-        android:onClick="onClick"
         android:text="@string/planButtonText"
         app:layout_constraintBottom_toTopOf="@+id/addBizView"
         app:layout_constraintEnd_toEndOf="parent"
