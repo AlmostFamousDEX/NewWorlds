@@ -124,6 +124,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });*/
 
+        //fixed
         final Button buttonOp = (Button) findViewById(R.id.nextOp);
         buttonOp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
