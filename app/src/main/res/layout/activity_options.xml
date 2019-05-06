@@ -27,16 +27,14 @@
         android:id="@+id/entertainmentLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginEnd="111dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="159dp"
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
         android:text="@string/entertainmentLabel"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/educationalLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/restaurantsLabel" />
 
@@ -75,50 +73,50 @@
 
     <TextView
         android:id="@+id/restaurant1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginLeft="83dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginRight="227dp"
-        android:layout_marginBottom="137dp"
+        android:layout_width="128dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="187dp"
+        android:layout_marginEnd="420dp"
+        android:layout_marginRight="420dp"
+        android:layout_marginBottom="136dp"
         android:text="@string/restaurant1"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/entertainmentLabel"
+        app:layout_constraintBottom_toTopOf="@+id/entertainment1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurantsLabel" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginBottom="129dp"
         android:text="@string/addToItinerary"
         app:layout_constraintBottom_toTopOf="@+id/entertainmentLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurantsLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/restaurantsLabel"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/entertainment1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginRight="227dp"
-        android:layout_marginBottom="118dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginRight="220dp"
+        android:layout_marginBottom="250dp"
         android:text="@string/entertainment1"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/educationalLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entertainmentLabel" />
+        app:layout_constraintBottom_toTopOf="@+id/educational1"
+        app:layout_constraintEnd_toStartOf="@+id/addEntertainment"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/addEntertainment"
@@ -133,8 +131,10 @@
         android:text="@string/addToItinerary"
         app:layout_constraintBottom_toTopOf="@+id/educationalLabel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/entertainment1"
-        app:layout_constraintTop_toBottomOf="@+id/entertainmentLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/entertainmentLabel"
+        app:layout_constraintVertical_bias="0.602" />
 
     <TextView
         android:id="@+id/educational1"
@@ -150,8 +150,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/educationalLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/educationalLabel"
+        app:layout_constraintVertical_bias="0.266" />
 
     <CheckBox
         android:id="@+id/addEducational"
@@ -166,7 +168,9 @@
         android:text="@string/addToItinerary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/educational1"
-        app:layout_constraintTop_toBottomOf="@+id/educationalLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/educationalLabel"
+        app:layout_constraintVertical_bias="0.227" />
 
 </android.support.constraint.ConstraintLayout>

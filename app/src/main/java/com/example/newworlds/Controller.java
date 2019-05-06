@@ -1,5 +1,7 @@
 package com.example.newworlds;
 
+//rework method names
+
 import android.app.Application;
 
 import android.util.Log;
@@ -15,6 +17,10 @@ public class Controller extends Application {
     private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> education = new ArrayList<Education>();
+
+    private ArrayList<Resturant> resturantsDisplay = new ArrayList<Resturant>();
+    private ArrayList<Entertainment> entertainmentDisplay = new ArrayList<Entertainment>();
+    private ArrayList<Education> educationDisplay = new ArrayList<Education>();
 
     public void onCreate() {
 
@@ -361,4 +367,32 @@ public class Controller extends Application {
     //getData() will  return an object in this case
     //Add methods as needed
 
+
+    /*
+    Algorithm Plan...
+
+    Take information from preferences/options activity
+       - this will basically find the type(s) selected from the spinners
+
+    Then formulate arrays/arrayList based off the information for each type
+
+    Limit options from each type to maybe 3-5
+
+    Repeat process for all categories (restaurants, entertainment, education)
+
+
+
+    public void restaurantItineraryDisplay()
+        {
+            diners;
+        }
+    public void entertainmentItineraryDisplay()
+        {
+            shows;
+        }
+    public void educationItineraryDisplay()
+        {
+            sites;
+        }
+        */
 }
