@@ -30,4 +30,9 @@ public class Resturant {
     }
     public String getChours() {return  chours;}
     public String getOhours() {return ohours;}
+
+    public String toString(){
+        return "Name: " + getName() + "\nAddress: " + getAddress() + "\nType: " + getType();
+    }
+    //ADD THESE TO EDUCATION & ENTERTAINMENT
 }
