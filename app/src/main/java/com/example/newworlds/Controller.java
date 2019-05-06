@@ -30,207 +30,189 @@ public class Controller extends Application {
         entertainment();
         education();
 
-        Log.d("AlexTestController","Good");
+        Log.d("AlexTestController", "Good");
 
     }
-    public void resturants(){
+
+    public void resturants() {
         InputStream is = getResources().openRawResource(R.raw.restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
 
-        boolean skip =false;
+        boolean skip = false;
 
-        String line ="";
+        String line = "";
         try {
-            while ((line=reader.readLine()) != null){
-                if (skip)
-                {
+            while ((line = reader.readLine()) != null) {
+                if (skip) {
                     //split by ,
                     String[] fields = line.split(",");
 
                     //read data
-                    resturants.add(new Resturant(fields[0],fields[1],fields[2],fields[3],fields[4]));
-                }
-                else {
+                    resturants.add(new Resturant(fields[0], fields[1], fields[2], fields[3], fields[4]));
+                } else {
                     skip = true;
                 }
             }
-        }
-        catch (IOException e){
-            Log.wtf("MainActivity-restaurants","ERROR reading data on line: "+line);
+        } catch (IOException e) {
+            Log.wtf("MainActivity-restaurants", "ERROR reading data on line: " + line);
         }
     }
-    public void entertainment(){
+
+    public void entertainment() {
         InputStream is = getResources().openRawResource(R.raw.entertainment);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
 
-        boolean skip =false;
+        boolean skip = false;
 
-        String line ="";
+        String line = "";
         try {
-            while ((line=reader.readLine()) != null){
-                if (skip)
-                {
+            while ((line = reader.readLine()) != null) {
+                if (skip) {
                     //split by ,
                     String[] fields = line.split(",");
 
                     //read data
-                    entertainment.add(new Entertainment(fields[0],fields[1],fields[2],fields[3],fields[4]));
-                }
-                else {
+                    entertainment.add(new Entertainment(fields[0], fields[1], fields[2], fields[3], fields[4]));
+                } else {
                     skip = true;
                 }
             }
-        }
-        catch (IOException e){
-            Log.wtf("MainActivity","ERROR reading data on line: "+line);
+        } catch (IOException e) {
+            Log.wtf("MainActivity", "ERROR reading data on line: " + line);
         }
     }
-    public void education(){
+
+    public void education() {
         InputStream is = getResources().openRawResource(R.raw.educational);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
 
-        boolean skip =false;
+        boolean skip = false;
 
-        String line ="";
+        String line = "";
         try {
-            while ((line=reader.readLine()) != null){
-                if (skip)
-                {
+            while ((line = reader.readLine()) != null) {
+                if (skip) {
                     //split by ,
                     String[] fields = line.split(",");
 
                     //read data
-                    education.add(new Education(fields[0],fields[1],fields[2],fields[3],fields[4]));
-                }
-                else {
+                    education.add(new Education(fields[0], fields[1], fields[2], fields[3], fields[4]));
+                } else {
                     skip = true;
                 }
             }
-        }
-        catch (IOException e){
-            Log.wtf("MainActivity","ERROR reading data on line: "+line);
+        } catch (IOException e) {
+            Log.wtf("MainActivity", "ERROR reading data on line: " + line);
         }
     }
-    public String[] getEducationType(){
+
+    public String[] getEducationType() {
         String[] Sites = new String[education.size()];
-        for (int i=0; i<education.size(); i++)
-        {
+        for (int i = 0; i < education.size(); i++) {
             Education site = education.get(i);
-            Sites[i]=site.getType();
+            Sites[i] = site.getType();
         }
         Arrays.sort(Sites);
-        int delete3=0;
+        int delete3 = 0;
 
-        for (int i=1; i<Sites.length; i++)
-        {
-            if (Sites[i].equals(Sites[i-1])) {
-                Log.d("a repeat!!","yeee");
+        for (int i = 1; i < Sites.length; i++) {
+            if (Sites[i].equals(Sites[i - 1])) {
+                Log.d("a repeat!!", "yeee");
                 Sites[i] = "XX";
-            }
-            else{
-                Log.d("not a repeat","yerrrr");
+            } else {
+                Log.d("not a repeat", "yerrrr");
             }
         }
-        for (int l=0;l<Sites.length;l++){
-            if (Sites[l].equals(("XX"))){
+        for (int l = 0; l < Sites.length; l++) {
+            if (Sites[l].equals(("XX"))) {
                 delete3++;
             }
         }
-        String[] sites = new String[Sites.length-delete3+1];
-        sites[0]="None Selected";
+        String[] sites = new String[Sites.length - delete3 + 1];
+        sites[0] = "None Selected";
 
-        int counter3=1;
+        int counter3 = 1;
 
-        for (int j=0;j<Sites.length;j++)
-        {
-            if (!(Sites[j].equals("XX")))
-            {
-                sites[counter3]=Sites[j];
+        for (int j = 0; j < Sites.length; j++) {
+            if (!(Sites[j].equals("XX"))) {
+                sites[counter3] = Sites[j];
                 counter3++;
             }
         }
 
         return sites;
     }
-    public String[] getResturantType(){
+
+    public String[] getResturantType() {
         String[] Sites = new String[resturants.size()];
-        for (int i=0; i<resturants.size(); i++)
-        {
+        for (int i = 0; i < resturants.size(); i++) {
             Resturant site = resturants.get(i);
-            Sites[i]=site.getType();
+            Sites[i] = site.getType();
         }
         Arrays.sort(Sites);
-        int delete3=0;
+        int delete3 = 0;
 
-        for (int i=1; i<Sites.length; i++)
-        {
-            if (Sites[i].equals(Sites[i-1])) {
-                Log.d("a repeat!!","yeee");
+        for (int i = 1; i < Sites.length; i++) {
+            if (Sites[i].equals(Sites[i - 1])) {
+                Log.d("a repeat!!", "yeee");
                 Sites[i] = "XX";
-            }
-            else{
-                Log.d("not a repeat","yerrrr");
+            } else {
+                Log.d("not a repeat", "yerrrr");
             }
         }
-        for (int l=0;l<Sites.length;l++){
-            if (Sites[l].equals(("XX"))){
+        for (int l = 0; l < Sites.length; l++) {
+            if (Sites[l].equals(("XX"))) {
                 delete3++;
             }
         }
-        String[] sites = new String[Sites.length-delete3+1];
-        sites[0]="None Selected";
+        String[] sites = new String[Sites.length - delete3 + 1];
+        sites[0] = "None Selected";
 
-        int counter3=1;
+        int counter3 = 1;
 
-        for (int j=0;j<Sites.length;j++)
-        {
-            if (!(Sites[j].equals("XX")))
-            {
-                sites[counter3]=Sites[j];
+        for (int j = 0; j < Sites.length; j++) {
+            if (!(Sites[j].equals("XX"))) {
+                sites[counter3] = Sites[j];
                 counter3++;
             }
         }
 
         return sites;
     }
-    public String[] getEntertainmentType(){
+
+    public String[] getEntertainmentType() {
         String[] Sites = new String[entertainment.size()];
-        for (int i=0; i<entertainment.size(); i++)
-        {
+        for (int i = 0; i < entertainment.size(); i++) {
             Entertainment site = entertainment.get(i);
-            Sites[i]=site.getType();
+            Sites[i] = site.getType();
         }
         Arrays.sort(Sites);
-        int delete3=0;
+        int delete3 = 0;
 
-        for (int i=1; i<Sites.length; i++)
-        {
-            if (Sites[i].equals(Sites[i-1])) {
-                Log.d("a repeat!!","yeee");
+        for (int i = 1; i < Sites.length; i++) {
+            if (Sites[i].equals(Sites[i - 1])) {
+                Log.d("a repeat!!", "yeee");
                 Sites[i] = "XX";
-            }
-            else{
-                Log.d("not a repeat","yerrrr");
+            } else {
+                Log.d("not a repeat", "yerrrr");
             }
         }
-        for (int l=0;l<Sites.length;l++){
-            if (Sites[l].equals(("XX"))){
+        for (int l = 0; l < Sites.length; l++) {
+            if (Sites[l].equals(("XX"))) {
                 delete3++;
             }
         }
-        String[] sites = new String[Sites.length-delete3+1];
-        sites[0]="None Selected";
+        String[] sites = new String[Sites.length - delete3 + 1];
+        sites[0] = "None Selected";
 
-        int counter3=1;
+        int counter3 = 1;
 
-        for (int j=0;j<Sites.length;j++)
-        {
-            if (!(Sites[j].equals("XX")))
-            {
-                sites[counter3]=Sites[j];
+        for (int j = 0; j < Sites.length; j++) {
+            if (!(Sites[j].equals("XX"))) {
+                sites[counter3] = Sites[j];
                 counter3++;
             }
         }
@@ -238,129 +220,105 @@ public class Controller extends Application {
         return sites;
     }
 
-    public String[] getNameFromResturantType(String type)
-    {
-        int counter=0;
-        for (int i=0; i<resturants.size(); i++)
-        {
+    public String[] getNameFromResturantType(String type) {
+        int counter = 0;
+        for (int i = 0; i < resturants.size(); i++) {
             Resturant site = resturants.get(i);
-            if (site.getType().equals(type))
-            {
+            if (site.getType().equals(type)) {
                 counter++;
             }
         }
-        int counter2=0;
+        int counter2 = 0;
         String[] dummy = new String[counter];
-        for (int k=0; k<resturants.size(); k++)
-        {
+        for (int k = 0; k < resturants.size(); k++) {
             Resturant site = resturants.get(k);
-            if (site.getType().equals(type))
-            {
-                dummy[counter2]=site.getName();
+            if (site.getType().equals(type)) {
+                dummy[counter2] = site.getName();
                 counter2++;
             }
         }
         return dummy;
     }
 
-    public String[] getNameFromEducationType(String type)
-    {
-        int counter=0;
-        for (int i=0; i<education.size(); i++)
-        {
+    public String[] getNameFromEducationType(String type) {
+        int counter = 0;
+        for (int i = 0; i < education.size(); i++) {
             Education site = education.get(i);
-            if (site.getType().equals(type))
-            {
+            if (site.getType().equals(type)) {
                 counter++;
             }
         }
-        int counter2=0;
+        int counter2 = 0;
         String[] dummy = new String[counter];
-        for (int k=0; k<education.size(); k++)
-        {
+        for (int k = 0; k < education.size(); k++) {
             Education site = education.get(k);
-            if (site.getType().equals(type))
-            {
-                dummy[counter2]=site.getName();
+            if (site.getType().equals(type)) {
+                dummy[counter2] = site.getName();
                 counter2++;
             }
         }
         return dummy;
     }
 
-    public String[] getNameFromEntertainmentType(String type)
-    {
-        int counter=0;
-        for (int i=0; i<entertainment.size(); i++)
-        {
+    public String[] getNameFromEntertainmentType(String type) {
+        int counter = 0;
+        for (int i = 0; i < entertainment.size(); i++) {
             Entertainment site = entertainment.get(i);
-            if (site.getType().equals(type))
-            {
+            if (site.getType().equals(type)) {
                 counter++;
             }
         }
-        int counter2=0;
+        int counter2 = 0;
         String[] dummy = new String[counter];
-        for (int k=0; k<entertainment.size(); k++)
-        {
+        for (int k = 0; k < entertainment.size(); k++) {
             Entertainment site = entertainment.get(k);
-            if (site.getType().equals(type))
-            {
-                dummy[counter2]=site.getName();
+            if (site.getType().equals(type)) {
+                dummy[counter2] = site.getName();
                 counter2++;
             }
         }
         return dummy;
     }
 
-    public String[] getInfoResturant(String name)
-    {
+    public String[] getInfoResturant(String name) {
         String[] dummy = new String[3];
-        for (int i=0; i<resturants.size(); i++)
-        {
+        for (int i = 0; i < resturants.size(); i++) {
             Resturant site = resturants.get(i);
-            if (site.getName().equals(name))
-            {
-                dummy[0]=site.getAddress();
-                dummy[1]=site.getOhours();
-                dummy[2]=site.getChours();
+            if (site.getName().equals(name)) {
+                dummy[0] = site.getAddress();
+                dummy[1] = site.getOhours();
+                dummy[2] = site.getChours();
             }
         }
         return dummy;
     }
 
-    public String[] getInfoEntertainment(String name)
-    {
+    public String[] getInfoEntertainment(String name) {
         String[] dummy = new String[3];
-        for (int i=0; i<entertainment.size(); i++)
-        {
+        for (int i = 0; i < entertainment.size(); i++) {
             Entertainment site = entertainment.get(i);
-            if (site.getName().equals(name))
-            {
-                dummy[0]=site.getAddress();
-                dummy[1]=site.getOhours();
-                dummy[2]=site.getChours();
+            if (site.getName().equals(name)) {
+                dummy[0] = site.getAddress();
+                dummy[1] = site.getOhours();
+                dummy[2] = site.getChours();
             }
         }
         return dummy;
     }
 
-    public String[] getInfoEducation(String name)
-    {
+    public String[] getInfoEducation(String name) {
         String[] dummy = new String[3];
-        for (int i=0; i<education.size(); i++)
-        {
+        for (int i = 0; i < education.size(); i++) {
             Education site = education.get(i);
-            if (site.getName().equals(name))
-            {
-                dummy[0]=site.getAddress();
-                dummy[1]=site.getOhours();
-                dummy[2]=site.getChours();
+            if (site.getName().equals(name)) {
+                dummy[0] = site.getAddress();
+                dummy[1] = site.getOhours();
+                dummy[2] = site.getChours();
             }
         }
         return dummy;
     }
-
+}
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
@@ -368,31 +326,4 @@ public class Controller extends Application {
     //Add methods as needed
 
 
-    /*
-    Algorithm Plan...
 
-    Take information from preferences/options activity
-       - this will basically find the type(s) selected from the spinners
-
-    Then formulate arrays/arrayList based off the information for each type
-
-    Limit options from each type to maybe 3-5
-
-    Repeat process for all categories (restaurants, entertainment, education)
-
-
-
-    public void restaurantItineraryDisplay()
-        {
-            diners;
-        }
-    public void entertainmentItineraryDisplay()
-        {
-            shows;
-        }
-    public void educationItineraryDisplay()
-        {
-            sites;
-        }
-        */
-}

@@ -38,8 +38,16 @@
     <string name="educational1">Educational Site 1</string>
 
     <string name="addBusinessPageTitle">Add a Business</string>
-    <string name="addBusinessPageName">Business Name</string>
+    <string name="addBusinessPageName">Business Name:</string>
     <string name="addBusinessPageNameInput">Enter Business Name</string>
+    <string name="addBusinessPageCategory">Category:</string>
+    <string name="addBusinessPageType">Type:</string>
+    <string name="addBusinessPageAddress">Address:</string>
+    <string name="addBusinessPageAddressInput">Enter the Business Address</string>
+    <string name="addBusinessPageOpenHr">Opening Hour:</string>
+    <string name="addBusinessPageOpenHrInput">Enter the Business Opening Hour</string>
+    <string name="addBusinessPageCloseHr">Closing Hour:</string>
+    <string name="addBusinessPageCloseHrInput">Enter the Business Closing Hour</string>
 
     <string name="spin">Spinner Example</string>
     <string-array name="food">
