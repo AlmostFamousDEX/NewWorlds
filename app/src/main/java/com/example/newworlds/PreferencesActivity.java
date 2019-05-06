@@ -24,8 +24,6 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        //EDEN MOVE THIS TO THE PREFERENCES ACTIVITY
-
         final ArrayList<String> restaurantType = new ArrayList<>();
         final ArrayList<String> entertainmentType = new ArrayList<>();
         final ArrayList<String> educationType = new ArrayList<>();
@@ -34,6 +32,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         //String[] entertainmentType;
         //String[] educationType;
 
+        /*
         String[] diners = bundle.getStringArray("diner");
         if (diners[0]!="")
         {
@@ -49,6 +48,20 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         {
             Log.d("MyTest", "good3");
         }
+        */
+
+        //String[] diners1 = aController.getResturantType();
+        //String[] shows1 = aController.getEntertainmentType();
+        //String[] sites1 = aController.getEducationType();
+
+
+
+        final Controller aController = (Controller) getApplicationContext();
+
+        String[] diners=aController.getResturantType();
+        String[] shows=aController.getEntertainmentType();
+        String[] sites=aController.getEducationType();
+
 
         Spinner spinner = findViewById(R.id.foodChoices);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners);
@@ -113,6 +126,14 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
 
         ;
 
+        //fixed
+        final Button buttonOp = (Button) findViewById(R.id.nextOp);
+        buttonOp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent=new Intent(PreferencesActivity.this,OptionsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -126,7 +147,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
+/*
     private void initRecyclerView(){
         //Log.d(TAG,"initRecyclerView: init recyclerview.");
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
@@ -141,5 +162,5 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-
+*/
 }
