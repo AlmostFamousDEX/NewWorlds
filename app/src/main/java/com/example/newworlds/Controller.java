@@ -361,6 +361,39 @@ public class Controller extends Application {
         return dummy;
     }
 
+    public void addObjectToResturantDisplay( String name)
+    {
+        for (int i=0; i<resturants.size(); i++)
+        {
+            if (resturants.get(i).getName().equals(name))
+            {
+                resturantsDisplay.add(resturants.get(i));
+            }
+        }
+    }
+
+    public void addObjectToEducationDisplay( String name)
+    {
+        for (int i=0; i<education.size(); i++)
+        {
+            if (education.get(i).getName().equals(name))
+            {
+                educationDisplay.add(education.get(i));
+            }
+        }
+    }
+
+    public void addObjectToEntertainmentDisplay( String name)
+    {
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            if (entertainment.get(i).getName().equals(name))
+            {
+                entertainmentDisplay.add(entertainment.get(i));
+            }
+        }
+    }
+
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()

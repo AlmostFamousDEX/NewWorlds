@@ -24,28 +24,133 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="105dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="185dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:id="@+id/businessName"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:text="@string/addBusinessPageName"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="455dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="738dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_width="424dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addBusinessTitle">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="445dp"
             android:layout_height="wrap_content"
             android:hint="@string/addBusinessPageNameInput" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/categoryDropDown"
+        android:layout_width="137dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/addBusinessPageCategory"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessName" />
+
+    <TextView
+        android:id="@+id/typeView"
+        android:layout_width="101dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/addBusinessPageType"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryDropDown" />
+
+    <TextView
+        android:id="@+id/addressView"
+        android:layout_width="103dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/addBusinessPageAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeView" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="419dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="333dp"
+        app:layout_constraintStart_toEndOf="@+id/addressView"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addBusinessPageAddressInput" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/openHourView"
+        android:layout_width="103dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/addBusinessPageOpenHr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressView" />
+
+    <TextView
+        android:id="@+id/closeHourView"
+        android:layout_width="106dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/addBusinessPageCloseHr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openHourView" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="425dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintStart_toEndOf="@+id/openHourView"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addBusinessPageOpenHrInput" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="416dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addBusinessPageCloseHrInput" />
     </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>
