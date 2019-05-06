@@ -37,6 +37,10 @@
     <string name="entertainment1">Entertainment 1</string>
     <string name="educational1">Educational Site 1</string>
 
+    <string name="addBusinessPageTitle">Add a Business</string>
+    <string name="addBusinessPageName">Business Name</string>
+    <string name="addBusinessPageNameInput">Enter Business Name</string>
+
     <string name="spin">Spinner Example</string>
     <string-array name="food">
         <item>Italian</item>
