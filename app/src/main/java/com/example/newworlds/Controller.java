@@ -22,6 +22,10 @@ public class Controller extends Application {
     private ArrayList<Entertainment> entertainmentDisplay = new ArrayList<Entertainment>();
     private ArrayList<Education> educationDisplay = new ArrayList<Education>();
 
+    private ArrayList<Resturant> edenResturants = new ArrayList<Resturant>();
+    private ArrayList<Entertainment> edenEntertainment = new ArrayList<Entertainment>();
+    private ArrayList<Education> edenEducation = new ArrayList<Education>();
+
     public void onCreate() {
 
         super.onCreate();
@@ -396,6 +400,20 @@ public class Controller extends Application {
             }
         }
     }
+
+    public ArrayList<Resturant> getResturantsFromName(String type)
+    {
+        for (int i=0; i<resturants.size(); i++)
+        {
+            if (resturants.get(i).getType().equals(type))
+            {
+                edenResturants.add(resturants.get(i));
+            }
+        }
+        return edenResturants;
+    }
+
+
 
     //final Controller aController = (Controller) getApplicationContext();
     //
