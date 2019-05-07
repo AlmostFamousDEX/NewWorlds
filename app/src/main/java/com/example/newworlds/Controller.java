@@ -430,15 +430,39 @@ public class Controller extends Application {
     }
 
     public String getCurrentEducationType() {
-        return currentEducationType;
+        if (currentEducationType!=null)
+        {
+            return currentEducationType;
+
+        }
+        else
+        {
+            return "No type has been selected";
+        }
     }
 
     public String getCurrentEntertainmentType() {
-        return currentEntertainmentType;
+        if (currentEntertainmentType!=null)
+        {
+            return currentEntertainmentType;
+
+        }
+        else
+        {
+            return "No type has been selected";
+        }
     }
 
     public String getCurrentResturantType() {
-        return currentResturantType;
+        if (currentResturantType!=null)
+        {
+            return currentResturantType;
+
+        }
+        else
+        {
+            return "No type has been selected";
+        }
     }
     //final Controller aController = (Controller) getApplicationContext();
     //
