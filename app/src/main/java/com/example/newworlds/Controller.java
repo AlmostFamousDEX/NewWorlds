@@ -417,6 +417,30 @@ public class Controller extends Application {
         return edenResturants;
     }
 
+    public ArrayList<Education> getEducationSitesFromType(String type)
+    {
+        for (int i=0; i<education.size(); i++)
+        {
+            if (education.get(i).getType().equals(type))
+            {
+                edenEducation.add(education.get(i));
+            }
+        }
+        return edenEducation;
+    }
+
+    public ArrayList<Entertainment> getEntertainmentSitesFromType(String type)
+    {
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            if (entertainment.get(i).getType().equals(type))
+            {
+                edenEntertainment.add(entertainment.get(i));
+            }
+        }
+        return edenEntertainment;
+    }
+
     public void setCurrentEducationType(String currentEducationType) {
         this.currentEducationType = currentEducationType;
     }
