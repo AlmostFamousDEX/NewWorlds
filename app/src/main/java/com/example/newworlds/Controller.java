@@ -428,6 +428,18 @@ public class Controller extends Application {
     public void setCurrentEntertainmentType(String currentEntertainmentType) {
         this.currentEntertainmentType = currentEntertainmentType;
     }
+
+    public String getCurrentEducationType() {
+        return currentEducationType;
+    }
+
+    public String getCurrentEntertainmentType() {
+        return currentEntertainmentType;
+    }
+
+    public String getCurrentResturantType() {
+        return currentResturantType;
+    }
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
