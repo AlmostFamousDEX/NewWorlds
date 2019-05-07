@@ -34,8 +34,10 @@ public class RecyclerActivity extends AppCompatActivity {
         ArrayList<Resturant> restaurantData = aController.getRestaurants();
         Log.d("NUMBER OF RESTAURANTS", String.valueOf(restaurantData.size()));
 
+        ArrayList<Resturant> selectedRestaurants = aController.getResturantsFromName(aController.getCurrentResturantType());
+
         // specify an adapter
-        adapter = new RecyclerViewAdapter(restaurantData,this);
+        adapter = new RecyclerViewAdapter(selectedRestaurants,this);
         recyclerView.setAdapter(adapter);
 
     }

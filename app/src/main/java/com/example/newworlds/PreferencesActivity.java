@@ -71,6 +71,8 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
 
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String foodSelection = parent.getItemAtPosition(position).toString();
+                final Controller aController = (Controller) getApplicationContext();
+                aController.setCurrentResturantType(foodSelection);
                 //String text2 = parent.getSelectedItem().toString();
                 Log.d("foodSelection",foodSelection);
                 //Log.d("my selectionnnn",text2);
@@ -91,6 +93,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String entertainmentSelection = parent.getItemAtPosition(position).toString();
+                aController.setCurrentEntertainmentType(entertainmentSelection);
                 //String text2 = parent.getSelectedItem().toString();
                 Log.d("entertainmentSelection",entertainmentSelection);
                 //Log.d("my selectionnnn",text2);
@@ -111,6 +114,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String educationSelection = parent.getItemAtPosition(position).toString();
+                aController.setCurrentResturantType(educationSelection);
                 //String text2 = parent.getSelectedItem().toString();
                 Log.d("educationSelection",educationSelection);
                 //Log.d("my selectionnnn",text2);
