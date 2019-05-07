@@ -26,6 +26,10 @@ public class Controller extends Application {
     private ArrayList<Entertainment> edenEntertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> edenEducation = new ArrayList<Education>();
 
+    private String currentResturantType;
+    private String currentEducationType;
+    private String currentEntertainmentType;
+
     public void onCreate() {
 
         super.onCreate();
@@ -413,8 +417,17 @@ public class Controller extends Application {
         return edenResturants;
     }
 
+    public void setCurrentEducationType(String currentEducationType) {
+        this.currentEducationType = currentEducationType;
+    }
+    public void setCurrentResturantType (String currentResturantType)
+    {
+        this.currentResturantType=currentResturantType;
+    }
 
-
+    public void setCurrentEntertainmentType(String currentEntertainmentType) {
+        this.currentEntertainmentType = currentEntertainmentType;
+    }
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
