@@ -128,13 +128,13 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
-        ;
 
-        //fixed
+
+        //not fixed
         final Button buttonOp = (Button) findViewById(R.id.nextOp);
         buttonOp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent=new Intent(PreferencesActivity.this,OptionsActivity.class);
+                Intent intent=new Intent(PreferencesActivity.this,RecyclerActivity.class);
                 startActivity(intent);
             }
         });
