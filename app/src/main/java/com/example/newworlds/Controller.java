@@ -30,8 +30,6 @@ public class Controller extends Application {
     private String currentEducationType;
     private String currentEntertainmentType;
 
-    private ArrayList<Place> places = new ArrayList<Place>();
-
     public void onCreate() {
 
         super.onCreate();
@@ -249,12 +247,6 @@ public class Controller extends Application {
     }
     public ArrayList<Resturant> getRestaurants(){
         return resturants;
-    }
-    public ArrayList<Entertainment> getEntertainments(){
-        return entertainment;
-    }
-    public ArrayList<Education> getEducation(){
-        return education;
     }
 
     public String[] getNameFromResturantType(String type)
@@ -508,6 +500,177 @@ public class Controller extends Application {
         {
             return "No type has been selected";
         }
+    }
+
+    public ArrayList<ArrayList<Itenerary>> permutate(ArrayList<Resturant> res, ArrayList<Education> edu, ArrayList<Entertainment> ent)
+    {
+        int counter=0;
+
+        if (res.size()==0)
+        {
+            counter++;
+        }
+        if (edu.size()==0)
+        {
+            counter++;
+        }
+        if (ent.size()==0)
+        {
+            counter++;
+        }
+
+        ArrayList<ArrayList<Itenerary>> dummy =new ArrayList<ArrayList<Itenerary>>();
+
+        if (counter==3)
+        {
+            for (int i=0; i<res.size(); i++)
+            {
+                for (int j=0; j<edu.size(); j++)
+                {
+                    for (int k=0; k<ent.size(); k++)
+                    {
+                        Itenerary it1 = new Itenerary(res.get(i).getName(),res.get(i).getType(),res.get(i).getAddress(),res.get(i).getOhours(),res.get(i).getChours());
+                        Itenerary it2 = new Itenerary(edu.get(j).getName(),edu.get(j).getType(),edu.get(j).getAddress(),edu.get(j).getOhours(),edu.get(j).getChours());
+                        Itenerary it3 = new Itenerary(ent.get(k).getName(),ent.get(k).getType(),ent.get(k).getAddress(),ent.get(k).getOhours(),ent.get(k).getChours());
+
+                        ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+                        itOfficial.add(it1);
+                        itOfficial.add(it2);
+                        itOfficial.add(it3);
+
+                        dummy.add(itOfficial);
+                    }
+                }
+            }
+            return dummy;
+        }
+        if (counter==2)
+        {
+            if (res.size()==0)
+            {
+
+                    for (int j=0; j<edu.size(); j++)
+                    {
+                        for (int k=0; k<ent.size(); k++)
+                        {
+
+                            Itenerary it2 = new Itenerary(edu.get(j).getName(),edu.get(j).getType(),edu.get(j).getAddress(),edu.get(j).getOhours(),edu.get(j).getChours());
+                            Itenerary it3 = new Itenerary(ent.get(k).getName(),ent.get(k).getType(),ent.get(k).getAddress(),ent.get(k).getOhours(),ent.get(k).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+
+                            itOfficial.add(it2);
+                            itOfficial.add(it3);
+
+                            dummy.add(itOfficial);
+                        }
+                    }
+
+            }
+            if (edu.size()==0)
+            {
+                for (int i=0; i<res.size(); i++)
+                {
+
+                        for (int k=0; k<ent.size(); k++)
+                        {
+                            Itenerary it1 = new Itenerary(res.get(i).getName(),res.get(i).getType(),res.get(i).getAddress(),res.get(i).getOhours(),res.get(i).getChours());
+
+                            Itenerary it3 = new Itenerary(ent.get(k).getName(),ent.get(k).getType(),ent.get(k).getAddress(),ent.get(k).getOhours(),ent.get(k).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+                            itOfficial.add(it1);
+
+                            itOfficial.add(it3);
+
+                            dummy.add(itOfficial);
+                        }
+
+                }
+            }
+            if (ent.size()==0)
+            {
+                for (int i=0; i<res.size(); i++)
+                {
+                    for (int j=0; j<edu.size(); j++)
+                    {
+
+                            Itenerary it1 = new Itenerary(res.get(i).getName(),res.get(i).getType(),res.get(i).getAddress(),res.get(i).getOhours(),res.get(i).getChours());
+                            Itenerary it2 = new Itenerary(edu.get(j).getName(),edu.get(j).getType(),edu.get(j).getAddress(),edu.get(j).getOhours(),edu.get(j).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+                            itOfficial.add(it1);
+                            itOfficial.add(it2);
+
+
+                            dummy.add(itOfficial);
+
+                    }
+                }
+            }
+            return dummy;
+        }
+        if (counter==1)
+        {
+            if (res.size()!=0)
+            {
+                for (int i=0; i<res.size(); i++)
+                {
+
+                            Itenerary it1 = new Itenerary(res.get(i).getName(),res.get(i).getType(),res.get(i).getAddress(),res.get(i).getOhours(),res.get(i).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+                            itOfficial.add(it1);
+
+                            dummy.add(itOfficial);
+
+                }
+            }
+            if (edu.size()!=0)
+            {
+
+                    for (int j=0; j<edu.size(); j++)
+                    {
+
+
+                            Itenerary it2 = new Itenerary(edu.get(j).getName(),edu.get(j).getType(),edu.get(j).getAddress(),edu.get(j).getOhours(),edu.get(j).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+
+                            itOfficial.add(it2);
+
+
+                            dummy.add(itOfficial);
+
+                    }
+
+            }
+            if (ent.size()!=0)
+            {
+
+                        for (int k=0; k<ent.size(); k++)
+                        {
+
+                            Itenerary it3 = new Itenerary(ent.get(k).getName(),ent.get(k).getType(),ent.get(k).getAddress(),ent.get(k).getOhours(),ent.get(k).getChours());
+
+                            ArrayList<Itenerary> itOfficial=new ArrayList<Itenerary>();
+
+
+                            itOfficial.add(it3);
+
+                            dummy.add(itOfficial);
+                        }
+            }
+                return dummy;
+        }
+
+        return dummy;
     }
 
     //final Controller aController = (Controller) getApplicationContext();
