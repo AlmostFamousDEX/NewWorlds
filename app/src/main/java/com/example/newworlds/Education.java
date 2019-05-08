@@ -1,6 +1,6 @@
 package com.example.newworlds;
 
-public class Education {
+public class Education{
     private String name;
     private String address;
     private String type;
@@ -30,4 +30,9 @@ public class Education {
     }
     public String getChours() {return  chours;}
     public String getOhours() {return ohours;}
+/*
+    public int getPlaceType() {
+        return Place.TYPE_EDUCATION;
+    }
+    */
 }

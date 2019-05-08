@@ -42,9 +42,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder: called");
         Resturant restaurant = allRestaurants.get(position);
-        holder.restaurantName.setText(restaurant.getName());
-        holder.restaurantType.setText(restaurant.getType());
-        holder.restaurantAddress.setText(restaurant.getAddress());
+        holder.Name.setText(restaurant.getName());
+        holder.Type.setText(restaurant.getType());
+        holder.Address.setText(restaurant.getAddress());
     }
 
     @Override
@@ -57,13 +57,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView restaurantName, restaurantType, restaurantAddress;
+        TextView Name, Type, Address;
 
         public ViewHolder(@NonNull LinearLayout itemView) {
             super(itemView);
-            restaurantName = itemView.findViewById(R.id.restaurantName);
-            restaurantType = itemView.findViewById(R.id.restaurantType);
-            restaurantAddress = itemView.findViewById(R.id.address);
+            Name = itemView.findViewById(R.id.placeName);
+            Type = itemView.findViewById(R.id.placeType);
+            Address = itemView.findViewById(R.id.address);
         }
     }
 }

@@ -30,6 +30,8 @@ public class Controller extends Application {
     private String currentEducationType;
     private String currentEntertainmentType;
 
+    private ArrayList<Place> places = new ArrayList<Place>();
+
     public void onCreate() {
 
         super.onCreate();
@@ -247,6 +249,12 @@ public class Controller extends Application {
     }
     public ArrayList<Resturant> getRestaurants(){
         return resturants;
+    }
+    public ArrayList<Entertainment> getEntertainments(){
+        return entertainment;
+    }
+    public ArrayList<Education> getEducation(){
+        return education;
     }
 
     public String[] getNameFromResturantType(String type)
@@ -501,6 +509,7 @@ public class Controller extends Application {
             return "No type has been selected";
         }
     }
+
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()

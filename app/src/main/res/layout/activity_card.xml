@@ -27,14 +27,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/restaurantType"
+                    android:id="@+id/placeType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/restaurantName"
+                    android:id="@+id/placeName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="24sp" />

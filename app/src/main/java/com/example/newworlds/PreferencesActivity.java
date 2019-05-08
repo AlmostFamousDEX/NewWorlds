@@ -114,7 +114,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String educationSelection = parent.getItemAtPosition(position).toString();
-                aController.setCurrentResturantType(educationSelection);
+                aController.setCurrentEducationType(educationSelection);
                 //String text2 = parent.getSelectedItem().toString();
                 Log.d("educationSelection",educationSelection);
                 //Log.d("my selectionnnn",text2);

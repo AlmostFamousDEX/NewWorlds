@@ -70,4 +70,5 @@
         <item>Historical Museums</item>
         <item>Schools</item>
     </string-array>
+    <string name="title_activity_interface">Interface</string>
 </resources>
