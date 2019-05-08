@@ -9,47 +9,35 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.example.newworlds.Controller;
 
 import java.util.ArrayList;
 
 public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<RecyclerViewAdapterRestaurant.ViewHolder> {
-    public static final String TAG="RecyclerViewAdapter";
-
-    //final Controller aController = (Controller) getApplicationContext();
-    // ArrayList<Resturant> restaurantData = aController.getRestaurants();
-    //private ArrayList<Resturant>myDataSet2;
+    public static final String TAG = "RecyclerViewAdapter";
     private ArrayList<Resturant> allRestaurants;
-    //private ArrayList<String> mPreferencesCategories=new ArrayList<>();
-    //private Spinner mChoices = new Spinner();
-    //private String stringEden;
+    private ArrayList<Resturant> itineraryRestaurants;
     private Context mContext;
 
-    /*
-    public RecyclerViewAdapter(ArrayList<String> preferencesCategories, Spinner choices,Context context){
-        //mPreferencesCategories=preferencesCategories;
-        //mChoices=choices;
-        mContext=context;
-    }
-    */
-    public RecyclerViewAdapterRestaurant(ArrayList<Resturant> data, Context context){
+    public RecyclerViewAdapterRestaurant(ArrayList<Resturant> data, Context context) {
         //mPreferencesCategories=preferencesCategories;
         //mChoices=choices;
         //restaurantData=idk;
         //myDataSet2=idk2;
-        allRestaurants=data;
-        mContext=context;
+        allRestaurants = data;
+        mContext = context;
     }
-
-    //public RecyclerViewAdapter( RecyclerActivity recyclerActivity) {
-    //}
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LinearLayout view = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card,parent,false);
+        LinearLayout view = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card, parent, false);
         CardView cardView = view.findViewById(R.id.cardRestaurant);
         ViewHolder holder = new RecyclerViewAdapterRestaurant.ViewHolder(view);
         return holder;
@@ -57,13 +45,24 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        Log.d(TAG,"onBindViewHolder: called");
+        Log.d(TAG, "onBindViewHolder: called");
         Resturant restaurant = allRestaurants.get(position);
         //Entertainment entertainment = allEntertainments.get(position);
         //Education education = allEducations.get(position);
         holder.Name.setText(restaurant.getName());
         holder.Type.setText(restaurant.getType());
         holder.Address.setText(restaurant.getAddress());
+/*
+        holder.selectRestaurant.setOnClickListener(new View.onClickListener() {
+            public void onClick(View view) {
+                if (((CheckBox) view).isChecked()) {
+                    itineraryRestaurants.add(allRestaurants.get(getAdapterPosition()));
+                }
+            }
+
+        });
+        //we still have to debug the onClick method and onClickListeners for the check boxes to work.
+        */
     }
 
     @Override
@@ -71,20 +70,20 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
 
     public int getItemCount() {
         return allRestaurants.size();
-        //return myDataSet2.size();
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView Name, Type, Address;
+        CheckBox selectRestaurant;
 
         public ViewHolder(@NonNull LinearLayout itemView) {
             super(itemView);
             Name = itemView.findViewById(R.id.placeName);
             Type = itemView.findViewById(R.id.placeType);
             Address = itemView.findViewById(R.id.address);
+            selectRestaurant = itemView.findViewById(R.id.checkbox_addToItinerary);
         }
     }
-
 }
