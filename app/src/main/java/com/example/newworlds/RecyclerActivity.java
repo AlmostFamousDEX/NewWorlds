@@ -1,10 +1,13 @@
 package com.example.newworlds;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -65,5 +68,12 @@ public class RecyclerActivity extends AppCompatActivity {
         recyclerView2.setAdapter(adapter2);
         recyclerView3.setAdapter(adapter3);
 
+        final Button buttonOp1 = (Button) findViewById(R.id.genButton);
+        buttonOp1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent=new Intent(RecyclerActivity.this,RecyclerItinerariesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

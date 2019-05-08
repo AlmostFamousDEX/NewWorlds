@@ -49,6 +49,8 @@
     <string name="addBusinessPageCloseHr">Closing Hour:</string>
     <string name="addBusinessPageCloseHrInput">Enter the Business Closing Hour</string>
 
+    <string name="newNext">Generate Itineraries</string>
+
     <string name="spin">Spinner Example</string>
     <string-array name="food">
         <item>Italian</item>
