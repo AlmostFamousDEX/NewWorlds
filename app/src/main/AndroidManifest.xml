@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RecyclerItinerariesActivity"></activity>
         <activity android:name=".RecyclerActivity" />
         <activity android:name=".ItineraryDisplay" />
         <activity android:name=".AddBusiness" />
