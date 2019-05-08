@@ -5,9 +5,29 @@ import android.os.Bundle;
 
 public class ItineraryDisplay extends AppCompatActivity {
 
+    final Controller aController = (Controller) getApplicationContext();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itinerary_display);
+
+
+
+
+
+    }
+
+    public void addResturant(String name)
+    {
+        aController.addObjectToResturantDisplay(name);
+    }
+    public void addEducation(String name)
+    {
+        aController.addObjectToEducationDisplay(name);
+    }
+    public void addEntertainment (String name)
+    {
+        aController.addObjectToEntertainmentDisplay(name);
     }
 }

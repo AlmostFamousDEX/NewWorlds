@@ -383,7 +383,11 @@ public class Controller extends Application {
         }
     }
 
-    public void addObjectToEducationDisplay( String name)
+    public ArrayList<Resturant> getResturantsDisplay() {
+        return resturantsDisplay;
+    }
+
+    public void addObjectToEducationDisplay(String name)
     {
         for (int i=0; i<education.size(); i++)
         {
@@ -394,7 +398,12 @@ public class Controller extends Application {
         }
     }
 
-    public void addObjectToEntertainmentDisplay( String name)
+    public ArrayList<Education> getEducationDisplay() {
+        return educationDisplay;
+    }
+
+
+    public void addObjectToEntertainmentDisplay(String name)
     {
         for (int i=0; i<entertainment.size(); i++)
         {
@@ -403,6 +412,10 @@ public class Controller extends Application {
                 entertainmentDisplay.add(entertainment.get(i));
             }
         }
+    }
+
+    public ArrayList<Entertainment> getEntertainmentDisplay() {
+        return entertainmentDisplay;
     }
 
     public ArrayList<Resturant> getResturantsFromName(String type)
