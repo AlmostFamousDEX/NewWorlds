@@ -673,6 +673,30 @@ public class Controller extends Application {
         return dummy;
     }
 
+    public Entertainment getObjectFromEntertainmentName(String name)
+    {
+        for (int i=0; i<entertainment.size(); i++)
+        {
+            if (entertainment.get(i).getName().equals(name))
+            {
+                return entertainment.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Resturant getObjectFromResturantName(String name)
+    {
+        for (int i=0; i<resturants.size(); i++)
+        {
+            if (resturants.get(i).getName().equals(name))
+            {
+                return resturants.get(i);
+            }
+        }
+        return null;
+    }
+
     public Education getObjectFromEducationName(String name)
     {
         for (int i=0; i<education.size(); i++)
