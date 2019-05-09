@@ -36,6 +36,7 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
             arr2.add("False");
         }
         mContext=context;
+        //hi
     }
 
     @Override
