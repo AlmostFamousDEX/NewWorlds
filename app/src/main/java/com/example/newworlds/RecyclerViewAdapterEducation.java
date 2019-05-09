@@ -22,6 +22,8 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
     private ArrayList<Education> allEducation;
     private ArrayList<Education> itineraryEducation;
     private Context mContext;
+    private ArrayList<String> arr= new ArrayList<String>();
+
 
     public RecyclerViewAdapterEducation(ArrayList<Education> data, Context context){
         allEducation=data;
@@ -38,23 +40,25 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG,"onBindViewHolder: called");
-        Education education = allEducation.get(position);
+        final Education education = allEducation.get(position);
         holder.Name.setText(education.getName());
         holder.Type.setText(education.getType());
         holder.Address.setText(education.getAddress());
-/*
-        holder.selectEducation.setOnClickListener(new View.onClickListener() {
+
+        holder.selectEducation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
-                    itineraryEducation.add(allEducation.get(getAdapterPosition()));
+                    String dummy=education.getName();
+                    Log.d("itineraryEducation",dummy);
+                    //String str=education.getName();
                 }
             }
 
         });
         //we still have to debug the onClick method and onClickListeners for the check boxes to work.
-        */
+
     }
 
     @Override
@@ -74,6 +78,7 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
             Name = itemView.findViewById(R.id.placeName);
             Type = itemView.findViewById(R.id.placeType);
             Address = itemView.findViewById(R.id.address);
+            selectEducation = itemView.findViewById(R.id.checkbox_addToItinerary);
         }
     }
 
