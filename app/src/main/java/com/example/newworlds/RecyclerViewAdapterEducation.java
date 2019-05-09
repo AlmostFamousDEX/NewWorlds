@@ -23,10 +23,16 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
     private ArrayList<Education> itineraryEducation;
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
+    private ArrayList<String> arr2= new ArrayList<String>();
 
 
     public RecyclerViewAdapterEducation(ArrayList<Education> data, Context context){
         allEducation=data;
+        for (int i=0; i<allEducation.size(); i++)
+        {
+            arr.add(allEducation.get(i).getName());
+            arr2.add("False");
+        }
         mContext=context;
     }
 
@@ -51,6 +57,17 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
                     String dummy=education.getName();
+                    for (int i=0; i<arr.size(); i++)
+                    {
+                        if (arr.get(i).equals(dummy))
+                        {
+                            arr2.set(i,"True");
+                        }
+                    }
+                    for (int i=0; i<arr2.size();i++)
+                    {
+                        Log.d("itineraryEducation",arr2.get(i));
+                    }
                     Log.d("itineraryEducation",dummy);
                     //String str=education.getName();
                 }
