@@ -673,6 +673,18 @@ public class Controller extends Application {
         return dummy;
     }
 
+    public Education getObjectFromEducationName(String name)
+    {
+        for (int i=0; i<education.size(); i++)
+        {
+            if (education.get(i).getName().equals(name))
+            {
+                return education.get(i);
+            }
+        }
+        return null;
+    }
+
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
