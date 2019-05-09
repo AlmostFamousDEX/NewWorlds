@@ -24,10 +24,12 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
     private ArrayList<String> arr2= new ArrayList<String>();
+    private ArrayList<Education> alexEducation = new ArrayList<Education>();
 
 
     public RecyclerViewAdapterEducation(ArrayList<Education> data, Context context){
         allEducation=data;
+        alexEducation=data;
         for (int i=0; i<allEducation.size(); i++)
         {
             arr.add(allEducation.get(i).getName());
@@ -62,11 +64,13 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
                         if (arr.get(i).equals(dummy))
                         {
                             arr2.set(i,"True");
+
                         }
                     }
                     for (int i=0; i<arr2.size();i++)
                     {
                         Log.d("itineraryEducation",arr2.get(i));
+
                     }
                     Log.d("itineraryEducation",dummy);
                     //String str=education.getName();
