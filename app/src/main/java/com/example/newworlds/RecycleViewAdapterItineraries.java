@@ -42,6 +42,7 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
         Log.d(TAG,"onBindViewHolder: called");
         ArrayList<Itenerary> itinerary = allItineraries.get(position);
         holder.place1.setText(itinerary.get(0).getName());
+        Log.d("i'm quite confused",itinerary.get(0).getName());
         holder.place2.setText(itinerary.get(1).getName());
         holder.place3.setText(itinerary.get(2).getName());
 /*

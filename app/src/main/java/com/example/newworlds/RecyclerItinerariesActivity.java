@@ -24,8 +24,8 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerFinal);
 
         recyclerView.setHasFixedSize(true);
-
         layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         final Controller aController = (Controller) getApplicationContext();
         Bundle bundle = getIntent().getExtras();
@@ -63,6 +63,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         //we need to figure out how to use methods to get the above ArrayLists
         //these methods exist. However, we would need to use them in the Adapter classes and we have not figured out
         //how to use the controller in Adapter classes
+
 
         adapter = new RecycleViewAdapterItineraries(itineraries, this);
         recyclerView.setAdapter(adapter);
