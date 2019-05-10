@@ -61,7 +61,9 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
         holder.Name.setText(restaurant.getName());
         holder.Type.setText(restaurant.getType());
         holder.Address.setText(restaurant.getAddress());
-/*
+
+        final Controller aController = (Controller) mContext.getApplicationContext();
+
         holder.selectRestaurant.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
@@ -85,10 +87,12 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
                             alexString.add(arr.get(i));
                         }
                     }
+                    aController.addItemToArjunResturant(alexString);
+
                     //String str=education.getName();
-                    Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
-                    intent.putExtra("Array List Restaurant!!",alexString);
-                    mContext.startActivity(intent);
+                    //Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
+                    //intent.putExtra("Array List Restaurant!!",alexString);
+                    //mContext.startActivity(intent);
                 }
             }
 

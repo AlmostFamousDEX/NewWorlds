@@ -220,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //being used for recyclerview. May move later -Eden
+        /*
         final Button addBiz = (Button) findViewById(R.id.addBizView);
         addBiz.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -231,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-
+*/
     }
     /*
     public void bizClick(View v){

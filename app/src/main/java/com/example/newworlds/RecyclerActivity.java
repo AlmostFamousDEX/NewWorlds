@@ -74,6 +74,9 @@ public class RecyclerActivity extends AppCompatActivity {
         recyclerView2.setAdapter(adapter2);
         recyclerView3.setAdapter(adapter3);
 
+        //ArrayList<Education> work = aController.getArjunEducation();
+
+
         final Button buttonOp1 = (Button) findViewById(R.id.genButton);
         buttonOp1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -81,11 +84,16 @@ public class RecyclerActivity extends AppCompatActivity {
                 //educations = (ArrayList<String>) bundle.get("Array List Education!!");
                 Intent intent=new Intent(RecyclerActivity.this,RecyclerItinerariesActivity.class);
                 //Intent intent2 = new Intent(mContext,RecyclerActivity.class);
-                intent.putExtra("I hope this works!!",educations);
-                intent.putExtra("I hope this works!!2",entertainment);
+                intent.putExtra("I hope this works!!",aController.getArjunEducation());
+                Log.d("yay",aController.getArjunEducation().toString());
+                intent.putExtra("I hope this works!!2",aController.getArjunEntertainment());
+                Log.d("yay2",aController.getArjunEntertainment().toString());
+                intent.putExtra("I hope this works!!3",aController.getArjunResturant());
+                Log.d("yay3",aController.getArjunResturant().toString());
+
                 startActivity(intent);
             }
         });
-
     }
+
 }

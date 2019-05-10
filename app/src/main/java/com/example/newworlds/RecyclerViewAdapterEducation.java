@@ -56,6 +56,8 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
         holder.Type.setText(education.getType());
         holder.Address.setText(education.getAddress());
 
+        final Controller aController = (Controller) mContext.getApplicationContext();
+
         holder.selectEducation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
@@ -80,11 +82,13 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
                         }
                     }
 
-                    final Controller aController = (Controller) mContext.getApplicationContext();
-                    String str=education.getName();
-                    Intent intent = new Intent(mContext,RecyclerActivity.class);
-                    intent.putExtra("Array List Education!!",alexString);
-                    mContext.startActivity(intent);
+                    aController.addItemToArjunEducation(alexString);
+
+
+                    //String str=education.getName();
+                    //Intent intent = new Intent(mContext,RecyclerActivity.class);
+                    //intent.putExtra("Array List Education!!",alexString);
+                    //mContext.startActivity(intent);
 /*
 
                     */

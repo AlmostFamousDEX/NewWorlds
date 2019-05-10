@@ -32,7 +32,7 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
     public RecycleViewAdapterItineraries.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LinearLayout view = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card_itinerary_permutation,parent,false);
-        CardView cardView = view.findViewById(R.id.cardRestaurant);
+        CardView cardView = view.findViewById(R.id.cardPermutations);
         RecycleViewAdapterItineraries.ViewHolder holder = new RecycleViewAdapterItineraries.ViewHolder(view);
         return holder;
     }
@@ -74,6 +74,7 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
             place1 = itemView.findViewById(R.id.place1);
             place2 = itemView.findViewById(R.id.place2);
             place3 = itemView.findViewById(R.id.place3);
+            selectItinerary = itemView.findViewById(R.id.choose_itinerary);
         }
     }
 

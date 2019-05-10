@@ -55,6 +55,8 @@ public class RecyclerViewAdapterEntertainment extends RecyclerView.Adapter<Recyc
         holder.Type.setText(entertainment.getType());
         holder.Address.setText(entertainment.getAddress());
 
+        final Controller aController = (Controller) mContext.getApplicationContext();
+
         holder.selectEntertainment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
@@ -78,12 +80,12 @@ public class RecyclerViewAdapterEntertainment extends RecyclerView.Adapter<Recyc
                             alexString.add(arr.get(i));
                         }
                     }
+                    aController.addItemToArjunEntertainment(alexString);
 
-                    final Controller aController = (Controller) mContext.getApplicationContext();
-                    String str=entertainment.getName();
-                    Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
-                    intent.putExtra("Array List Entertainment!!",alexString);
-                    mContext.startActivity(intent);
+                    //String str=entertainment.getName();
+                    //Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
+                    //intent.putExtra("Array List Entertainment!!",alexString);
+                    //mContext.startActivity(intent);
 
                 }
             }
