@@ -26,6 +26,11 @@ public class Controller extends Application {
     private ArrayList<Entertainment> edenEntertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> edenEducation = new ArrayList<Education>();
 
+
+    private ArrayList<Resturant> arjunResturant = new ArrayList<Resturant>();
+    private ArrayList<Entertainment> arjunEntertainment = new ArrayList<Entertainment>();
+    private ArrayList<Education> arjunEducation = new ArrayList<Education>();
+
     private String currentResturantType;
     private String currentEducationType;
     private String currentEntertainmentType;
@@ -709,6 +714,78 @@ public class Controller extends Application {
         return null;
     }
 
+    public void addItemToArjunResturant (ArrayList<Resturant> res)
+    {
+        for (int i=0; i<res.size(); i++)
+        {
+            String dummy = res.get(i).getName();
+            boolean test = true;
+
+            for (int k=0; k<resturants.size(); k++)
+            {
+                if (resturants.get(k).getName().equals(dummy))
+                {
+                    test=false;
+                }
+            }
+            if (test)
+            {
+                arjunResturant.add(res.get(i));
+            }
+        }
+    }
+    public void addItemToArjunEducation (ArrayList<Education> edu)
+    {
+        for (int i=0; i<edu.size(); i++)
+        {
+            String dummy = edu.get(i).getName();
+            boolean test = true;
+
+            for (int k=0; k<education.size(); k++)
+            {
+                if (education.get(k).getName().equals(dummy))
+                {
+                    test=false;
+                }
+            }
+            if (test)
+            {
+                arjunEducation.add(edu.get(i));
+            }
+        }
+    }
+    public void addItemToArjunEntertainment (ArrayList<Entertainment> ent)
+    {
+        for (int i=0; i<ent.size(); i++)
+        {
+            String dummy = ent.get(i).getName();
+            boolean test = true;
+
+            for (int k=0; k<entertainment.size(); k++)
+            {
+                if (entertainment.get(k).getName().equals(dummy))
+                {
+                    test=false;
+                }
+            }
+            if (test)
+            {
+                arjunEntertainment.add(ent.get(i));
+            }
+        }
+    }
+
+    public ArrayList<Education> getArjunEducation() {
+        return arjunEducation;
+    }
+
+    public ArrayList<Entertainment> getArjunEntertainment() {
+        return arjunEntertainment;
+    }
+
+    public ArrayList<Resturant> getArjunResturant() {
+        return arjunResturant;
+    }
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
