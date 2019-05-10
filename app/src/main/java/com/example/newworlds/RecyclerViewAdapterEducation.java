@@ -4,7 +4,9 @@ package com.example.newworlds;
 //import android.os.Bundle;
 //import android.support.v7.widget.LinearLayoutManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,16 +22,14 @@ import java.util.ArrayList;
 public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerViewAdapterEducation.ViewHolder> {
     public static final String TAG="RecyclerViewAdapter";
     private ArrayList<Education> allEducation;
-    private ArrayList<Education> itineraryEducation;
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
     private ArrayList<String> arr2= new ArrayList<String>();
-    private ArrayList<Education> alexEducation = new ArrayList<Education>();
+    private ArrayList<String> alexString = new ArrayList<String>();
 
 
     public RecyclerViewAdapterEducation(ArrayList<Education> data, Context context){
         allEducation=data;
-        alexEducation=data;
         for (int i=0; i<allEducation.size(); i++)
         {
             arr.add(allEducation.get(i).getName());
@@ -74,11 +74,25 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
 
                     }
                     Log.d("itineraryEducation",dummy);
-                    //String str=education.getName();
+                    for (int i = 0; i<arr2.size();i++){
+                        if (arr2.get(i).equals("True")){
+                            alexString.add(arr.get(i));
+                        }
+                    }
+
+                    final Controller aController = (Controller) mContext.getApplicationContext();
+                    String str=education.getName();
+                    Intent intent = new Intent(mContext,RecyclerActivity.class);
+                    intent.putExtra("Array List Education!!",alexString);
+                    mContext.startActivity(intent);
+/*
+
+                    */
                 }
             }
 
         });
+
         //we still have to debug the onClick method and onClickListeners for the check boxes to work.
 
     }

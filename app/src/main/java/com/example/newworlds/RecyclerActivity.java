@@ -1,6 +1,10 @@
 package com.example.newworlds;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +26,9 @@ public class RecyclerActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager1;
     private RecyclerView.LayoutManager layoutManager2;
     private RecyclerView.LayoutManager layoutManager3;
-
+    private ArrayList<String> educations;
+    private ArrayList<String> entertainment;
+    private BroadcastReceiver mMessageReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +77,15 @@ public class RecyclerActivity extends AppCompatActivity {
         final Button buttonOp1 = (Button) findViewById(R.id.genButton);
         buttonOp1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //Bundle bundle = getIntent().getExtras();
+                //educations = (ArrayList<String>) bundle.get("Array List Education!!");
                 Intent intent=new Intent(RecyclerActivity.this,RecyclerItinerariesActivity.class);
+                //Intent intent2 = new Intent(mContext,RecyclerActivity.class);
+                intent.putExtra("I hope this works!!",educations);
+                intent.putExtra("I hope this works!!2",entertainment);
                 startActivity(intent);
             }
         });
+
     }
 }
