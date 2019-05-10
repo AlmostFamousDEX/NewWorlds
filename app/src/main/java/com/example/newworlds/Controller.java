@@ -804,6 +804,37 @@ public class Controller extends Application {
     public ArrayList<Resturant> getArjunResturant() {
         return arjunResturant;
     }
+
+    public void removeElementFromArjunResturant (String name)
+    {
+        for (int i=0; i<arjunResturant.size(); i++)
+        {
+            if (arjunResturant.get(i).getName().equals(name))
+            {
+                arjunResturant.remove(i);
+            }
+        }
+    }
+    public void removeElementFromArjunEducation (String name)
+    {
+        for (int i=0; i<arjunEducation.size(); i++)
+        {
+            if (arjunEducation.get(i).getName().equals(name))
+            {
+                arjunEducation.remove(i);
+            }
+        }
+    }
+    public void removeElementFromArjunEntertainment (String name)
+    {
+        for (int i=0; i<arjunEntertainment.size(); i++)
+        {
+            if (arjunEntertainment.get(i).getName().equals(name))
+            {
+                arjunEntertainment.remove(i);
+            }
+        }
+    }
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()
