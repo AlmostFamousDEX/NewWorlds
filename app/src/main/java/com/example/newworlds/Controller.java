@@ -714,63 +714,81 @@ public class Controller extends Application {
         return null;
     }
 
-    public void addItemToArjunResturant (ArrayList<Resturant> res)
+    public void addItemToArjunResturant (ArrayList<String> res)
     {
         for (int i=0; i<res.size(); i++)
         {
-            String dummy = res.get(i).getName();
+            String dummy = res.get(i);
             boolean test = true;
 
-            for (int k=0; k<resturants.size(); k++)
+            for (int k=0; k<arjunResturant.size(); k++)
             {
-                if (resturants.get(k).getName().equals(dummy))
+                if (arjunResturant.get(k).getName().equals(dummy))
                 {
                     test=false;
                 }
             }
             if (test)
             {
-                arjunResturant.add(res.get(i));
+                for (int k=0; k<resturants.size(); k++)
+                {
+                    if (resturants.get(k).getName().equals(dummy))
+                    {
+                        arjunResturant.add(resturants.get(k));
+                    }
+                }
             }
         }
     }
-    public void addItemToArjunEducation (ArrayList<Education> edu)
+    public void addItemToArjunEducation (ArrayList<String> edu)
     {
         for (int i=0; i<edu.size(); i++)
         {
-            String dummy = edu.get(i).getName();
+            String dummy = edu.get(i);
             boolean test = true;
 
-            for (int k=0; k<education.size(); k++)
+            for (int k=0; k<arjunEducation.size(); k++)
             {
-                if (education.get(k).getName().equals(dummy))
+                if (arjunEducation.get(k).getName().equals(dummy))
                 {
                     test=false;
                 }
             }
             if (test)
             {
-                arjunEducation.add(edu.get(i));
+                for (int k=0; k<education.size(); k++)
+                {
+                    if (education.get(k).getName().equals(dummy))
+                    {
+                        arjunEducation.add(education.get(k));
+                    }
+                }
             }
         }
     }
-    public void addItemToArjunEntertainment (ArrayList<Entertainment> ent)
+    public void addItemToArjunEntertainment (ArrayList<String> ent)
     {
         for (int i=0; i<ent.size(); i++)
         {
-            String dummy = ent.get(i).getName();
+            String dummy = ent.get(i);
             boolean test = true;
 
-            for (int k=0; k<entertainment.size(); k++)
+            for (int k=0; k<arjunEntertainment.size(); k++)
             {
-                if (entertainment.get(k).getName().equals(dummy))
+                if (arjunEntertainment.get(k).getName().equals(dummy))
                 {
                     test=false;
                 }
             }
             if (test)
             {
-                arjunEntertainment.add(ent.get(i));
+                for (int k=0; k<entertainment.size(); k++)
+                {
+                    if (entertainment.get(k).getName().equals(dummy))
+                    {
+                        arjunEntertainment.add(entertainment.get(k));
+                    }
+                }
             }
         }
     }
