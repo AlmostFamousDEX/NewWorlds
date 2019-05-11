@@ -64,6 +64,8 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         //these methods exist. However, we would need to use them in the Adapter classes and we have not figured out
         //how to use the controller in Adapter classes
 
+        //ArrayList<ArrayList<Itenerary>> itinerariesFake = {{e
+
         Log.d("wut",itineraries.toString());
 
         adapter = new RecycleViewAdapterItineraries(itineraries, this);

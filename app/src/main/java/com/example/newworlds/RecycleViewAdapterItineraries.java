@@ -41,10 +41,22 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
     public void onBindViewHolder(@NonNull RecycleViewAdapterItineraries.ViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder: called");
         ArrayList<Itenerary> itinerary = allItineraries.get(position);
-        holder.place1.setText(itinerary.get(0).getName());
-        Log.d("i'm quite confused",itinerary.get(0).getName());
-        holder.place2.setText(itinerary.get(1).getName());
-        holder.place3.setText(itinerary.get(2).getName());
+        if (itinerary.get(0)!=null) {
+            holder.place1.setText(itinerary.get(0).getName());
+            Log.d("i'm quite confused",itinerary.get(0).getName());
+        }
+        else
+            holder.place1.setText("");
+        if (itinerary.get(1)!=null) {
+            holder.place2.setText(itinerary.get(1).getName());
+        }
+        else
+            holder.place2.setText("");
+        if (itinerary.get(2)!=null) {
+            holder.place3.setText(itinerary.get(2).getName());
+        }
+        else
+            holder.place3.setText("");
 /*
         holder.selectItinerary.setOnClickListener(new View.onClickListener() {
             public void onClick(View view) {

@@ -7,7 +7,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardRestaurant"
         android:layout_width="match_parent"
-        android:layout_height="173dp"
+        android:layout_height="180dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp">
@@ -20,7 +20,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="81dp"
+                android:layout_height="80dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
@@ -31,51 +31,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:textColor="@color/mainText"
                     android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/placeName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/mainText"
                     android:textSize="24sp" />
-
-                <CheckBox
-                    android:id="@+id/checkbox_addToItinerary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="50dp"
-                    android:onClick="onCheckboxClicked"
-                    android:text="Add to My Itinerary!" />
-
-
             </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mainText"
+                android:textSize="16sp" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginLeft="230dp">
-
-                </LinearLayout>
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkbox_addToItinerary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"
+                android:textColor="@color/mainText"
+                android:text="Add to My Itinerary!" />
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
 
