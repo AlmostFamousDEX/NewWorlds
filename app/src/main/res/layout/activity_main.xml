@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/text_bg"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="331dp"
-        android:layout_height="213dp"
+        android:layout_width="560dp"
+        android:layout_height="337dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="200dp"
@@ -19,18 +20,19 @@
         android:contentDescription="@string/logoDescriptor"
         app:layout_constraintBottom_toTopOf="@+id/titleView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757"
-        app:srcCompat="@drawable/logo1" />
+        app:srcCompat="@drawable/logo2" />
 
-    <TextView
+    //<TextView
         android:id="@+id/titleView"
         android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="224dp"
         android:layout_marginLeft="224dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="225dp"
         android:layout_marginRight="225dp"
         android:text="@string/titleText"
@@ -44,14 +46,16 @@
     <Button
         android:id="@+id/planTripView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="74dp"
         android:layout_marginStart="246dp"
         android:layout_marginLeft="246dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="248dp"
         android:layout_marginRight="248dp"
         android:text="@string/planButtonText"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
