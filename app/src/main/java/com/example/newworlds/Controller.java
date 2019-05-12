@@ -35,6 +35,9 @@ public class Controller extends Application {
     private String currentEducationType;
     private String currentEntertainmentType;
 
+
+    private ArrayList<Itenerary> it=new ArrayList<Itenerary>();
+
     public void onCreate() {
 
         super.onCreate();
@@ -836,6 +839,13 @@ public class Controller extends Application {
         }
     }
 
+    public void setIt(ArrayList<Itenerary> it) {
+        this.it = it;
+    }
+
+    public ArrayList<Itenerary> getIt() {
+        return it;
+    }
     //public void setItinerary(ArrayList<Itenerary>)
     //public ArrayList<Itenerary> getItinerary
 

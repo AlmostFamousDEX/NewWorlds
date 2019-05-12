@@ -58,8 +58,20 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         for (int j = 0;j<itinerariesRestaurants.size();j++){
             itinerariesRestaurants.set(j,aController.getObjectFromResturantName(restaurants.get(j)));
         }
+
         */
-        ArrayList<ArrayList<Itenerary>> itineraries = aController.permutate(restaurants2,educations2,entertainments2);
+
+        ArrayList<ArrayList<Itenerary>> itineraries = new ArrayList<ArrayList<Itenerary>>();
+
+        if (restaurants2.size()==0&&educations2.size()==0&&entertainments2.size()==0)
+        {
+            Log.d("AlexTestItenerary","It doesn't work");
+        }
+        else
+        {
+             itineraries = aController.permutate(restaurants2,educations2,entertainments2);
+        }
+
         //we need to figure out how to use methods to get the above ArrayLists
         //these methods exist. However, we would need to use them in the Adapter classes and we have not figured out
         //how to use the controller in Adapter classes
