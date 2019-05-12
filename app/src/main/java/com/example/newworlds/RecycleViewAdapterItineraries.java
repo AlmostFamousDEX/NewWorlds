@@ -68,7 +68,7 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
                         chosenItinerary.add(itinerary.get(i));
                     }
 
-                    //aController.setItinerary(chosenItinerary);
+                    aController.setIt(chosenItinerary);
                     //^^this method will be made
                 }
             }
