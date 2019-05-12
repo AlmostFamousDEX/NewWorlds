@@ -514,15 +514,15 @@ public class Controller extends Application {
     {
         int counter=0;
 
-        if (res.size()==0)
+        if (res.size()>0)
         {
             counter++;
         }
-        if (edu.size()==0)
+        if (edu.size()>0)
         {
             counter++;
         }
-        if (ent.size()==0)
+        if (ent.size()>0)
         {
             counter++;
         }
