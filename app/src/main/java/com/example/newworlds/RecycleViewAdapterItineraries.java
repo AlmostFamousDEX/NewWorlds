@@ -18,13 +18,13 @@ import java.util.ArrayList;
 public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleViewAdapterItineraries.ViewHolder> {
     public static final String TAG = "RecyclerViewAdapter";
     private ArrayList<ArrayList<Itenerary>> allItineraries;
-    private ArrayList<Itenerary> chosenItinerary;
+    private ArrayList<Itenerary> chosenItinerary = new ArrayList<Itenerary>();
     private Context mContext;
     private ArrayList<String> arr = new ArrayList<String>();
     private ArrayList<String> arr2 = new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
-    private SparseBooleanArray itemStateArray = new SparseBooleanArray();
+    //private SparseBooleanArray itemStateArray = new SparseBooleanArray();
 
     public RecycleViewAdapterItineraries(ArrayList<ArrayList<Itenerary>> data, Context context) {
         allItineraries = data;
@@ -59,16 +59,26 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
             holder.place3.setText("");
 
         final Controller aController = (Controller) mContext.getApplicationContext();
+        Log.d("size of itinerary", String.valueOf(itinerary.size()));
+        Log.d("what is itinerary",itinerary.toString());
 
         holder.selectItinerary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (((CheckBox) view).isChecked()) {
                     for (int i = 0; i < itinerary.size(); i++) {
-                        chosenItinerary.add(itinerary.get(i));
+                        if (itinerary.get(i)!=null){
+                            chosenItinerary.add(itinerary.get(i));
+                            aController.setIt(chosenItinerary);
+                        }
                     }
 
-                    aController.setIt(chosenItinerary);
+                    if (aController.getIt()!=null){
+                        Log.d("i'm tired of this",aController.getIt().toString());
+                    }
+                    else
+                        Log.d("welp","idk what the problem is");
+
                     //^^this method will be made
                 }
             }
