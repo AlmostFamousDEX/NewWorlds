@@ -17,11 +17,11 @@ import java.util.ArrayList;
 public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewAdapterFinal.ViewHolder>{
     public static final String TAG="RecyclerViewAdapter";
     //private ArrayList<ArrayList<Itenerary>> allItineraries;
-    private ArrayList<Itenerary> chosenItinerary;
+    private ArrayList<Itenerary> lastItinerary;
     private Context mContext;
 
     public RecyclerViewAdapterFinal(ArrayList<Itenerary> data, Context context){
-        chosenItinerary=data;
+        lastItinerary=data;
         mContext=context;
     }
 
@@ -37,7 +37,7 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterFinal.ViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder: called");
-        ArrayList<Itenerary> finalItinerary = chosenItinerary;
+        ArrayList<Itenerary> finalItinerary = lastItinerary;
         holder.place1.setText(finalItinerary.get(0).getName());
         holder.place2.setText(finalItinerary.get(1).getName());
         holder.place3.setText(finalItinerary.get(2).getName());
@@ -48,7 +48,7 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
 
 
     public int getItemCount() {
-        return chosenItinerary.size();
+        return lastItinerary.size();
     }
 
 

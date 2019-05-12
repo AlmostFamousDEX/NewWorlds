@@ -6,14 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".RecyclerItinerariesActivity">
 
+    <TextView
+        android:id="@+id/itinerariesLabel"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/text_bg"
+        android:text="Itineraries"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerFinal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerFinal"
         android:layout_width="match_parent"
-        android:layout_height="800dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/final_itinerary"
+        android:layout_height="650dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,12 +45,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="850dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:layout_marginBottom="8dp"
         android:text="Final Itinerary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerFinal" />
+        app:layout_constraintTop_toTopOf="@+id/recyclerFinal2"
+        app:layout_constraintVertical_bias="0.802" />
 
 </android.support.constraint.ConstraintLayout>

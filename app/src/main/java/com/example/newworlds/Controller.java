@@ -835,6 +835,11 @@ public class Controller extends Application {
             }
         }
     }
+
+    //public void setItinerary(ArrayList<Itenerary>)
+    //public ArrayList<Itenerary> getItinerary
+
+
     //final Controller aController = (Controller) getApplicationContext();
     //
     //        String outputData = aController.getData().getProductName()

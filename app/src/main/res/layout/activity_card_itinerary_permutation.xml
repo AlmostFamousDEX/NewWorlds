@@ -26,8 +26,23 @@
                 android:id="@+id/place2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="30dp"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/place3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp">
 
             <CheckBox
                 android:id="@+id/choose_itinerary"

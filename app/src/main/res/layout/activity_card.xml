@@ -30,7 +30,7 @@
                     android:id="@+id/placeType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="40dp"
                     android:textColor="@color/mainText"
                     android:textSize="16sp" />
 
@@ -38,7 +38,7 @@
                     android:id="@+id/placeName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="center_horizontal"
                     android:textColor="@color/mainText"
                     android:textSize="24sp" />
             </LinearLayout>

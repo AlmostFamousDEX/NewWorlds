@@ -17,18 +17,21 @@ public class RecyclerFinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_final_itinerary);
 
-        recyclerView4 = (RecyclerView) findViewById(R.id.recyclerFinal);
+        recyclerView4 = (RecyclerView) findViewById(R.id.recyclerFinal2);
 
         recyclerView4.setHasFixedSize(true);
 
         layoutManager4 = new LinearLayoutManager(this);
-/*
-        final Controller aController = (Controller) getApplicationContext();
-        ArrayList<Itenerary> finalItinerary = chosenItinerary;
-        //we probably need methods to get the chosenItinerary
+        recyclerView4.setLayoutManager(layoutManager4);
 
-        adapter4 = new RecyclerViewAdapterFinal(finalItinerary, this);
-        recyclerView4.setAdapter(adapter4);
-        */
+        final Controller aController = (Controller) getApplicationContext();
+        //Bundle bundle = getIntent().getExtras();
+        //ArrayList<Itenerary> finalItinerary = (ArrayList<Itenerary>) bundle.get("yolo");
+        //^^will implement once methods are written
+
+
+        //adapter4 = new RecyclerViewAdapterFinal(finalItinerary, this);
+        //recyclerView4.setAdapter(adapter4);
+        //^^will implement once methods are written
     }
 }
