@@ -25,13 +25,13 @@ public class RecyclerFinalActivity extends AppCompatActivity {
         recyclerView4.setLayoutManager(layoutManager4);
 
         final Controller aController = (Controller) getApplicationContext();
-        //Bundle bundle = getIntent().getExtras();
-        //ArrayList<Itenerary> finalItinerary = (ArrayList<Itenerary>) bundle.get("yolo");
+        Bundle bundle = getIntent().getExtras();
+        ArrayList<Itenerary> finalItinerary = (ArrayList<Itenerary>) bundle.get("yolo");
         //^^will implement once methods are written
 
 
-        //adapter4 = new RecyclerViewAdapterFinal(finalItinerary, this);
-        //recyclerView4.setAdapter(adapter4);
+        adapter4 = new RecyclerViewAdapterFinal(finalItinerary, this);
+        recyclerView4.setAdapter(adapter4);
         //^^will implement once methods are written
     }
 }

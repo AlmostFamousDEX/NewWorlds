@@ -87,8 +87,8 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         buttonOp2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent=new Intent(RecyclerItinerariesActivity.this,RecyclerFinalActivity.class);
-                //intent.putExtra("yolo",aController.getItinerary());
-                //Log.d("yay",aController.getItinerary().toString());
+                intent.putExtra("yolo",aController.getIt());
+                Log.d("yay",aController.getIt().toString());
                 startActivity(intent);
             }
         });
