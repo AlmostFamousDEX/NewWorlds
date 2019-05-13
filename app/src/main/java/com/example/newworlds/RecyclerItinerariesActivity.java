@@ -33,13 +33,25 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         ArrayList<Entertainment> entertainments2 = (ArrayList<Entertainment>) bundle.get("I hope this works!!2");
         ArrayList<Resturant> restaurants2 = (ArrayList<Resturant>) bundle.get("I hope this works!!3");
 
+        ArrayList<Education> education3 = new ArrayList<Education>();
+        ArrayList<Entertainment> entertainment3 = new ArrayList<Entertainment>();
+        ArrayList<Resturant> restaurant3 =new ArrayList<Resturant>();
+
         if (educations2!=null) {
             Log.d("does this workkkkk???", Arrays.toString(educations2.toArray()));
+            education3 = educations2;
         }
+
         if (entertainments2!=null) {
             Log.d("does this workkkkk???2", Arrays.toString(entertainments2.toArray()));
+            entertainment3=entertainments2;
         }
-        Log.d("does this workkkkk???3", Arrays.toString(restaurants2.toArray()));
+
+        if (restaurants2!=null){
+            Log.d("does this workkkkk???3", Arrays.toString(restaurants2.toArray()));
+            restaurant3 = restaurants2;
+        }
+
 
         //ArrayList<Education> itinerariesEducations = new ArrayList<Education>();
         //ArrayList<Entertainment> itinerariesEntertainments = new ArrayList<Entertainment>();
@@ -62,14 +74,29 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         */
 
         ArrayList<ArrayList<Itenerary>> itineraries = new ArrayList<ArrayList<Itenerary>>();
+        ArrayList<ArrayList<Itenerary>> dummy = new ArrayList<ArrayList<Itenerary>>();
 
-        if (restaurants2.size()==0&&educations2.size()==0&&entertainments2.size()==0)
+        if (restaurant3.size()==0&&education3.size()==0&&entertainment3.size()==0)
         {
             Log.d("AlexTestItenerary","It doesn't work");
         }
         else
         {
-             itineraries = aController.permutate(restaurants2,educations2,entertainments2);
+             itineraries = aController.permutate(restaurant3,education3,entertainment3);
+
+             //I commented this out for now....but the permutate2 method has errors
+             /*
+             for (int i=0; i<itineraries.size(); i++)
+             {
+                 ArrayList<ArrayList<Itenerary>> dummy2 = new ArrayList<>();
+                 dummy2=aController.permutate2(itineraries.get(i));
+                 for (int k=0; k<dummy2.size(); k++)
+                 {
+                     dummy.add(dummy2.get(k));
+                 }
+
+             }
+             */
         }
 
         //we need to figure out how to use methods to get the above ArrayLists
@@ -79,6 +106,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         //ArrayList<ArrayList<Itenerary>> itinerariesFake = {{e
 
         Log.d("wut",itineraries.toString());
+        Log.d("lolol",dummy.toString());
 
         adapter = new RecycleViewAdapterItineraries(itineraries, this);
         recyclerView.setAdapter(adapter);

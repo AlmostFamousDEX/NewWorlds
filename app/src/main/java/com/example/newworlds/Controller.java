@@ -872,6 +872,7 @@ public class Controller extends Application {
                 bar.remove(i);
                 ArrayList<Itenerary> foo = new ArrayList<Itenerary>();
                 foo.add(bar.get(1));
+                Log.d("what is the problemo??",bar.get(1).toString());
                 foo.add(bar.get(0));
                 ArrayList<Itenerary> foo2 = new ArrayList<Itenerary>();
                 ArrayList<Itenerary> foo3 = new ArrayList<Itenerary>();

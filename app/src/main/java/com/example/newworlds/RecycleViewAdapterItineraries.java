@@ -44,6 +44,23 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
     public void onBindViewHolder(@NonNull RecycleViewAdapterItineraries.ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
         final ArrayList<Itenerary> itinerary = allItineraries.get(position);
+        for (int i = 0;i<itinerary.size();i++){
+            if (i==0){
+                holder.place1.setText(itinerary.get(i).getName());
+                Log.d("i'm quite confused", itinerary.get(i).getName());
+            }
+            else
+                if (i==1){
+                    holder.place2.setText(itinerary.get(i).getName());
+                    Log.d("i'm quite confused", itinerary.get(i).getName());
+                }
+                else
+                    if (i==2){
+                        holder.place3.setText(itinerary.get(i).getName());
+                        Log.d("i'm quite confused", itinerary.get(i).getName());
+                    }
+        }
+        /*
         if (itinerary.get(0) != null) {
             holder.place1.setText(itinerary.get(0).getName());
             Log.d("i'm quite confused", itinerary.get(0).getName());
@@ -56,8 +73,9 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
         if (itinerary.get(2) != null) {
             holder.place3.setText(itinerary.get(2).getName());
         } else
+            Log.d("this element","doesn't exist");
             holder.place3.setText("");
-
+*/
         final Controller aController = (Controller) mContext.getApplicationContext();
         Log.d("size of itinerary", String.valueOf(itinerary.size()));
         Log.d("what is itinerary",itinerary.toString());
