@@ -846,6 +846,50 @@ public class Controller extends Application {
     public ArrayList<Itenerary> getIt() {
         return it;
     }
+
+
+    public ArrayList<ArrayList<Itenerary>> permutate2(ArrayList<Itenerary> it)
+    {
+        ArrayList<ArrayList<Itenerary>> dummy = new ArrayList<ArrayList<Itenerary>>();
+        if (it.size()==1)
+        {
+            dummy.add(it);
+            return dummy;
+        }
+        if (it.size()==2)
+        {
+            ArrayList<Itenerary> foo = new ArrayList<Itenerary>();
+            foo.add(it.get(1));
+            foo.add(it.get(0));
+            dummy.add(it);
+            dummy.add(foo);
+        }
+        if (it.size()==3)
+        {
+            for (int i=0; i<it.size(); i++)
+            {
+                ArrayList<Itenerary> bar = it;
+                bar.remove(i);
+                ArrayList<Itenerary> foo = new ArrayList<Itenerary>();
+                foo.add(bar.get(1));
+                foo.add(bar.get(0));
+                ArrayList<Itenerary> foo2 = new ArrayList<Itenerary>();
+                ArrayList<Itenerary> foo3 = new ArrayList<Itenerary>();
+                foo2.add(it.get(i));
+                foo3.add(it.get(i));
+                foo2.add(bar.get(0));
+                foo2.add(bar.get(1));
+                foo3.add(foo.get(0));
+                foo3.add(foo.get(1));
+                dummy.add(foo2);
+                dummy.add(foo3);
+            }
+            return dummy;
+        }
+        return dummy;
+    }
+
+
     //public void setItinerary(ArrayList<Itenerary>)
     //public ArrayList<Itenerary> getItinerary
 
