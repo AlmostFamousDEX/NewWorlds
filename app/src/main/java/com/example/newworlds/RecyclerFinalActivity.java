@@ -26,7 +26,7 @@ public class RecyclerFinalActivity extends AppCompatActivity {
 
         final Controller aController = (Controller) getApplicationContext();
         Bundle bundle = getIntent().getExtras();
-        ArrayList<Itenerary> finalItinerary = (ArrayList<Itenerary>) bundle.get("yolo");
+        ArrayList<ArrayList<Itenerary>> finalItinerary = (ArrayList<ArrayList<Itenerary>>) bundle.get("yolo");
         //^^will implement once methods are written
 
 

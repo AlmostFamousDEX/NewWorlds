@@ -17,10 +17,10 @@ import java.util.ArrayList;
 public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewAdapterFinal.ViewHolder>{
     public static final String TAG="RecyclerViewAdapter";
     //private ArrayList<ArrayList<Itenerary>> allItineraries;
-    private ArrayList<Itenerary> lastItinerary;
+    private ArrayList<ArrayList<Itenerary>> lastItinerary;
     private Context mContext;
 
-    public RecyclerViewAdapterFinal(ArrayList<Itenerary> data, Context context){
+    public RecyclerViewAdapterFinal(ArrayList<ArrayList<Itenerary>> data, Context context){
         lastItinerary=data;
         mContext=context;
     }
@@ -37,10 +37,26 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterFinal.ViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder: called");
-        ArrayList<Itenerary> finalItinerary = lastItinerary;
-        holder.place1.setText(finalItinerary.get(0).getName());
-        holder.place2.setText(finalItinerary.get(1).getName());
-        holder.place3.setText(finalItinerary.get(2).getName());
+        ArrayList<Itenerary> finalItinerary = lastItinerary.get(0);
+        for (int i = 0;i<finalItinerary.size();i++){
+            if (i==0){
+                holder.place1.setText(mContext.getResources().getString(R.string.one) + finalItinerary.get(i).getName());
+                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+            }
+            else
+            if (i==1){
+                holder.place2.setText(mContext.getResources().getString(R.string.two) + finalItinerary.get(i).getName());
+                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+            }
+            else
+            if (i==2){
+                holder.place3.setText(mContext.getResources().getString(R.string.three) + finalItinerary.get(i).getName());
+                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+            }
+        }
+        //holder.place1.setText(finalItinerary.get(0).getName());
+        //holder.place2.setText(finalItinerary.get(1).getName());
+        //holder.place3.setText(finalItinerary.get(2).getName());
 
     }
 

@@ -46,17 +46,17 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
         final ArrayList<Itenerary> itinerary = allItineraries.get(position);
         for (int i = 0;i<itinerary.size();i++){
             if (i==0){
-                holder.place1.setText(itinerary.get(i).getName());
+                holder.place1.setText(mContext.getResources().getString(R.string.one) + itinerary.get(i).getName());
                 Log.d("i'm quite confused", itinerary.get(i).getName());
             }
             else
                 if (i==1){
-                    holder.place2.setText(itinerary.get(i).getName());
+                    holder.place2.setText(mContext.getResources().getString(R.string.two) + itinerary.get(i).getName());
                     Log.d("i'm quite confused", itinerary.get(i).getName());
                 }
                 else
                     if (i==2){
-                        holder.place3.setText(itinerary.get(i).getName());
+                        holder.place3.setText(mContext.getResources().getString(R.string.three) + itinerary.get(i).getName());
                         Log.d("i'm quite confused", itinerary.get(i).getName());
                     }
         }
@@ -87,12 +87,11 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
                     for (int i = 0; i < itinerary.size(); i++) {
                         if (itinerary.get(i)!=null){
                             chosenItinerary.add(itinerary.get(i));
-                            aController.setIt(chosenItinerary);
                         }
                     }
-
-                    if (aController.getIt()!=null){
-                        Log.d("i'm tired of this",aController.getIt().toString());
+                    aController.addItemToAlexsItenerary(chosenItinerary);
+                    if (aController.getAlexsItenerary()!=null){
+                        Log.d("i'm tired of this",aController.getAlexsItenerary().toString());
                     }
                     else
                         Log.d("welp","idk what the problem is");
