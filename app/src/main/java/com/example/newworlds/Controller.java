@@ -40,6 +40,8 @@ public class Controller extends Application {
 
     private ArrayList<ArrayList<Itenerary>> alexsItenerary = new ArrayList<ArrayList<Itenerary>>();
 
+    private ArrayList<String> dummy2 = new ArrayList<String>();
+
     public void onCreate() {
 
         super.onCreate();
@@ -853,44 +855,56 @@ public class Controller extends Application {
 
     public ArrayList<ArrayList<Itenerary>> permutate2(ArrayList<Itenerary> it)
     {
+        dummy2.clear();
         ArrayList<ArrayList<Itenerary>> dummy = new ArrayList<ArrayList<Itenerary>>();
         if (it.size()==1)
         {
-            dummy.add(it);
-            return dummy;
+            permutate3("","0");
         }
         if (it.size()==2)
         {
-            ArrayList<Itenerary> foo = new ArrayList<Itenerary>();
-            foo.add(it.get(1));
-            foo.add(it.get(0));
-            dummy.add(it);
-            dummy.add(foo);
+            permutate3("","01");
         }
         if (it.size()==3)
         {
-            for (int i=0; i<it.size(); i++)
+            permutate3("","012");
+        }
+        for (int i=0; i<dummy2.size(); i++)
+        {
+            ArrayList<Itenerary> alexDummyIRanOutOfOriginalNames = new ArrayList<Itenerary>();
+            String str = dummy2.get(i);
+            for (int k=0; k<str.length(); k++)
             {
-                ArrayList<Itenerary> bar = it;
-                bar.remove(i);
-                ArrayList<Itenerary> foo = new ArrayList<Itenerary>();
-                foo.add(bar.get(1));
-                Log.d("what is the problemo??",bar.get(1).toString());
-                foo.add(bar.get(0));
-                ArrayList<Itenerary> foo2 = new ArrayList<Itenerary>();
-                ArrayList<Itenerary> foo3 = new ArrayList<Itenerary>();
-                foo2.add(it.get(i));
-                foo3.add(it.get(i));
-                foo2.add(bar.get(0));
-                foo2.add(bar.get(1));
-                foo3.add(foo.get(0));
-                foo3.add(foo.get(1));
-                dummy.add(foo2);
-                dummy.add(foo3);
+                char c = str.charAt(k);
+                int z = (int)(c);
+                alexDummyIRanOutOfOriginalNames.add(it.get(i));
             }
-            return dummy;
+            dummy.add(alexDummyIRanOutOfOriginalNames);
+            alexDummyIRanOutOfOriginalNames.clear();
         }
         return dummy;
+    }
+
+    public void permutate3(String pre, String rest) {
+        if (rest.length()==1)
+        {
+            String str = pre+rest;
+            dummy2.add(str);
+        }
+        else
+        {
+            for (int i=0; i<rest.length(); i++)
+            {
+                char c = rest.charAt(i);
+                String str1 = String.valueOf(c);
+                String str2=pre+str1;
+                StringBuilder sb = new StringBuilder(rest);
+                sb.deleteCharAt(i);
+                String str3 = sb.toString();
+
+                permutate3(str2,str3);
+            }
+        }
     }
 
     public void addItemToAlexsItenerary(ArrayList<Itenerary> itLives)
