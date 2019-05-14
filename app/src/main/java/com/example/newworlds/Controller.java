@@ -38,6 +38,8 @@ public class Controller extends Application {
 
     private ArrayList<Itenerary> it=new ArrayList<Itenerary>();
 
+    private ArrayList<ArrayList<Itenerary>> alexsItenerary = new ArrayList<ArrayList<Itenerary>>();
+
     public void onCreate() {
 
         super.onCreate();
@@ -822,6 +824,7 @@ public class Controller extends Application {
     {
         for (int i=0; i<arjunEducation.size(); i++)
         {
+
             if (arjunEducation.get(i).getName().equals(name))
             {
                 arjunEducation.remove(i);
@@ -890,7 +893,14 @@ public class Controller extends Application {
         return dummy;
     }
 
+    public void addItemToAlexsItenerary(ArrayList<Itenerary> itLives)
+    {
+        alexsItenerary.add(itLives);
+    }
 
+    public ArrayList<ArrayList<Itenerary>> getAlexsItenerary() {
+        return alexsItenerary;
+    }
     //public void setItinerary(ArrayList<Itenerary>)
     //public ArrayList<Itenerary> getItinerary
 
