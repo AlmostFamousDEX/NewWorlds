@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="560dp"
-        android:layout_height="337dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_marginStart="60dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="23dp"
         android:contentDescription="@string/logoDescriptor"
@@ -24,9 +24,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757"
-        app:srcCompat="@drawable/logo2" />
+        app:srcCompat="@drawable/logo3" />
 
-    //<TextView
+    <TextView
         android:id="@+id/titleView"
         android:layout_width="152dp"
         android:layout_height="wrap_content"

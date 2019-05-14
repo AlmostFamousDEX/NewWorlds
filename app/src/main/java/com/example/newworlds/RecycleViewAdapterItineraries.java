@@ -47,16 +47,19 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
         for (int i = 0;i<itinerary.size();i++){
             if (i==0){
                 holder.place1.setText(mContext.getResources().getString(R.string.one) + itinerary.get(i).getName());
+                holder.address1.setText(itinerary.get(i).getAddress());
                 Log.d("i'm quite confused", itinerary.get(i).getName());
             }
             else
                 if (i==1){
                     holder.place2.setText(mContext.getResources().getString(R.string.two) + itinerary.get(i).getName());
+                    holder.address2.setText(itinerary.get(i).getAddress());
                     Log.d("i'm quite confused", itinerary.get(i).getName());
                 }
                 else
                     if (i==2){
                         holder.place3.setText(mContext.getResources().getString(R.string.three) + itinerary.get(i).getName());
+                        holder.address3.setText(itinerary.get(i).getAddress());
                         Log.d("i'm quite confused", itinerary.get(i).getName());
                     }
         }
@@ -124,7 +127,7 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView place1, place2, place3;
+        TextView place1, place2, place3, address1, address2, address3;
         CheckBox selectItinerary;
 
         public ViewHolder(@NonNull LinearLayout itemView) {
@@ -132,6 +135,9 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
             place1 = itemView.findViewById(R.id.place1);
             place2 = itemView.findViewById(R.id.place2);
             place3 = itemView.findViewById(R.id.place3);
+            address1 = itemView.findViewById(R.id.address1);
+            address2 = itemView.findViewById(R.id.address2);
+            address3 = itemView.findViewById(R.id.address3);
             selectItinerary = itemView.findViewById(R.id.choose_itinerary);
         }
     }

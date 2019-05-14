@@ -85,7 +85,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
              itineraries = aController.permutate(restaurant3,education3,entertainment3);
 
              //I commented this out for now....but the permutate2 method has errors
-             /*
+/*
              for (int i=0; i<itineraries.size(); i++)
              {
                  ArrayList<ArrayList<Itenerary>> dummy2 = new ArrayList<>();
@@ -96,7 +96,8 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
                  }
 
              }
-             */
+*/
+
         }
 
         //we need to figure out how to use methods to get the above ArrayLists

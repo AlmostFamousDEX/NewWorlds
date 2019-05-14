@@ -41,16 +41,19 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
         for (int i = 0;i<finalItinerary.size();i++){
             if (i==0){
                 holder.place1.setText(mContext.getResources().getString(R.string.one) + finalItinerary.get(i).getName());
+                holder.address1.setText(finalItinerary.get(i).getAddress());
                 Log.d("i'm quite confused", finalItinerary.get(i).getName());
             }
             else
             if (i==1){
                 holder.place2.setText(mContext.getResources().getString(R.string.two) + finalItinerary.get(i).getName());
+                holder.address2.setText(finalItinerary.get(i).getAddress());
                 Log.d("i'm quite confused", finalItinerary.get(i).getName());
             }
             else
             if (i==2){
                 holder.place3.setText(mContext.getResources().getString(R.string.three) + finalItinerary.get(i).getName());
+                holder.address3.setText(finalItinerary.get(i).getAddress());
                 Log.d("i'm quite confused", finalItinerary.get(i).getName());
             }
         }
@@ -70,13 +73,16 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView place1, place2, place3;
+        TextView place1, place2, place3, address1, address2, address3;
 
         public ViewHolder(@NonNull LinearLayout itemView) {
             super(itemView);
             place1 = itemView.findViewById(R.id.place1);
             place2 = itemView.findViewById(R.id.place2);
             place3 = itemView.findViewById(R.id.place3);
+            address1 = itemView.findViewById(R.id.address1);
+            address2 = itemView.findViewById(R.id.address2);
+            address3 = itemView.findViewById(R.id.address3);
         }
     }
 
