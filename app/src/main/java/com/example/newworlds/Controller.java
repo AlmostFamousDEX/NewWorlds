@@ -877,7 +877,7 @@ public class Controller extends Application {
             {
                 char c = str.charAt(k);
                 int z = (int)(c);
-                alexDummyIRanOutOfOriginalNames.add(it.get(i));
+                alexDummyIRanOutOfOriginalNames.add(it.get(z));
             }
             dummy.add(alexDummyIRanOutOfOriginalNames);
             alexDummyIRanOutOfOriginalNames.clear();
