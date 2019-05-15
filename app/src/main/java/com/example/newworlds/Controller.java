@@ -14,6 +14,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static android.media.CamcorderProfile.get;
+
 public class Controller extends Application {
     private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
@@ -906,7 +908,33 @@ public class Controller extends Application {
             }
         }
     }
-
+/*
+    public ArrayList<ArrayList<Itenerary>> edenPermutate(ArrayList<Itenerary>it){
+        ArrayList<ArrayList<Itenerary>> combinations = new ArrayList<ArrayList<Itenerary>>();
+        ArrayList<Itenerary> option = new ArrayList<Itenerary>();
+        for (int i = 0;i<it.size();i++){
+            for (int j = 0;j<it.size();j++){
+                for (int k = 0;k<it.size();k++){
+                    option.add(it.get(i));
+                    option.add(it.get(j));
+                    option.add(it.get(k));
+                    for (int w =1;w<option.size();w++){
+                        if (option.get(w).equals(option.get(w-1))){
+                            option.remove(w);
+                        }
+                    }
+                    if (option.size()==3){
+                        if (option.get(0).equals(option.get(2))){
+                            option.remove(2);
+                        }
+                    }
+                    combinations.add(option);
+                }
+            }
+        }
+        return combinations;
+    }
+*/
     public void addItemToAlexsItenerary(ArrayList<Itenerary> itLives)
     {
         alexsItenerary.add(itLives);

@@ -47,38 +47,22 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
         for (int i = 0;i<itinerary.size();i++){
             if (i==0){
                 holder.place1.setText(mContext.getResources().getString(R.string.one) + itinerary.get(i).getName());
-                holder.address1.setText(itinerary.get(i).getAddress());
-                Log.d("i'm quite confused", itinerary.get(i).getName());
+                holder.address1.setText(itinerary.get(i).getType());
+                Log.d("i'm quite confused", itinerary.get(i).getType());
             }
             else
                 if (i==1){
                     holder.place2.setText(mContext.getResources().getString(R.string.two) + itinerary.get(i).getName());
-                    holder.address2.setText(itinerary.get(i).getAddress());
-                    Log.d("i'm quite confused", itinerary.get(i).getName());
+                    holder.address2.setText(itinerary.get(i).getType());
+                    Log.d("i'm quite confused", itinerary.get(i).getType());
                 }
                 else
                     if (i==2){
                         holder.place3.setText(mContext.getResources().getString(R.string.three) + itinerary.get(i).getName());
-                        holder.address3.setText(itinerary.get(i).getAddress());
-                        Log.d("i'm quite confused", itinerary.get(i).getName());
+                        holder.address3.setText(itinerary.get(i).getType());
+                        Log.d("i'm quite confused", itinerary.get(i).getType());
                     }
         }
-        /*
-        if (itinerary.get(0) != null) {
-            holder.place1.setText(itinerary.get(0).getName());
-            Log.d("i'm quite confused", itinerary.get(0).getName());
-        } else
-            holder.place1.setText("");
-        if (itinerary.get(1) != null) {
-            holder.place2.setText(itinerary.get(1).getName());
-        } else
-            holder.place2.setText("");
-        if (itinerary.get(2) != null) {
-            holder.place3.setText(itinerary.get(2).getName());
-        } else
-            Log.d("this element","doesn't exist");
-            holder.place3.setText("");
-*/
         final Controller aController = (Controller) mContext.getApplicationContext();
         Log.d("size of itinerary", String.valueOf(itinerary.size()));
         Log.d("what is itinerary",itinerary.toString());

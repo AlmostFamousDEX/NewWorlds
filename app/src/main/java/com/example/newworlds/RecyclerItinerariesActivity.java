@@ -75,6 +75,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
 
         ArrayList<ArrayList<Itenerary>> itineraries = new ArrayList<ArrayList<Itenerary>>();
         ArrayList<ArrayList<Itenerary>> dummy = new ArrayList<ArrayList<Itenerary>>();
+        ArrayList<ArrayList<Itenerary>> edenDummy = new ArrayList<ArrayList<Itenerary>>();
 
         if (restaurant3.size()==0&&education3.size()==0&&entertainment3.size()==0)
         {
@@ -85,7 +86,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
              itineraries = aController.permutate(restaurant3,education3,entertainment3);
 
              //I commented this out for now....but the permutate2 method has errors
-/*
+
              for (int i=0; i<itineraries.size(); i++)
              {
                  ArrayList<ArrayList<Itenerary>> dummy2 = new ArrayList<>();
@@ -95,6 +96,11 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
                      dummy.add(dummy2.get(k));
                  }
 
+             }
+
+/*
+             for (int i=0;i<itineraries.size();i++){
+                 edenDummy = aController.edenPermutate(itineraries.get(i));
              }
 */
 
@@ -109,7 +115,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         Log.d("wut",itineraries.toString());
         Log.d("lolol",dummy.toString());
 
-        adapter = new RecycleViewAdapterItineraries(itineraries, this);
+        adapter = new RecycleViewAdapterItineraries(dummy, this);
         recyclerView.setAdapter(adapter);
 
         final Button buttonOp2 = (Button) findViewById(R.id.final_itinerary);

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             Diners[i]=diner.getType();
         }
         Arrays.sort(Diners);
+        Log.d("stressed", String.valueOf(Diners));
         for (int i=0; i<entertainment.size(); i++)
         {
             Entertainment show = entertainment.get(i);
@@ -188,24 +189,6 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] sites1 = sites;
 
-        /*
-        for (int i=0; i<Shows.length; i++)
-        {
-            for (int j=0;j<Shows.length;j++) {
-                if (Shows[i] != Shows[j]) {
-                    shows.add(Shows[i]);
-                }
-            }
-        }
-        for (int i=0; i<Sites.length; i++)
-        {
-            for (int j=0;j<Sites.length;j++) {
-                if (Sites[i] != Sites[j]) {
-                    sites.add(Sites[i]);
-                }
-            }
-        }
-        */
         final String[] info1 = Diners;
 
         final Button planTrip = (Button) findViewById(R.id.planTripView);
@@ -218,32 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //being used for recyclerview. May move later -Eden
-        /*
-        final Button addBiz = (Button) findViewById(R.id.addBizView);
-        addBiz.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Log.d(TAG,"in addBizView button");
-                Intent intent2 =new Intent(view.getContext(), RecyclerActivity.class);
-                //intent.putExtra("diner", diners1);
-                //intent.putExtra("show", shows1);
-                //intent.putExtra("site", sites1);
-                startActivity(intent2);
-            }
-        });
-*/
     }
-    /*
-    public void bizClick(View v){
-        Log.d(TAG,"in addBizView button");
-        Intent intent =new Intent(this, RecyclerActivity.class);
-        //intent.putExtra("diner", diners1);
-        //intent.putExtra("show", shows1);
-        //intent.putExtra("site", sites1);
-        startActivity(intent);
-    }
-    */
 
     public void resturants(){
         InputStream is = getResources().openRawResource(R.raw.restaurants);
