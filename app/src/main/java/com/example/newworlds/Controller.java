@@ -20,19 +20,19 @@ public class Controller extends Application {
 
     //List of private variable
 
-    private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
+    private ArrayList<Restaurant> resturants = new ArrayList<Restaurant>();
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> education = new ArrayList<Education>();
 
-    private ArrayList<Resturant> resturantsDisplay = new ArrayList<Resturant>();
+    private ArrayList<Restaurant> resturantsDisplay = new ArrayList<Restaurant>();
     private ArrayList<Entertainment> entertainmentDisplay = new ArrayList<Entertainment>();
     private ArrayList<Education> educationDisplay = new ArrayList<Education>();
 
-    private ArrayList<Resturant> edenResturants = new ArrayList<Resturant>();
+    private ArrayList<Restaurant> edenResturants = new ArrayList<Restaurant>();
     private ArrayList<Entertainment> edenEntertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> edenEducation = new ArrayList<Education>();
 
-    private ArrayList<Resturant> arjunResturant = new ArrayList<Resturant>();
+    private ArrayList<Restaurant> arjunResturant = new ArrayList<Restaurant>();
     private ArrayList<Entertainment> arjunEntertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> arjunEducation = new ArrayList<Education>();
 
@@ -80,7 +80,7 @@ public class Controller extends Application {
                     String[] fields = line.split(",");
 
                     //read data
-                    resturants.add(new Resturant(fields[0],fields[1],fields[2],fields[3],fields[4]));
+                    resturants.add(new Restaurant(fields[0],fields[1],fields[2],fields[3],fields[4]));
                 }
                 else {
                     skip = true;
@@ -198,7 +198,7 @@ public class Controller extends Application {
         String[] Sites = new String[resturants.size()];
         for (int i=0; i<resturants.size(); i++)
         {
-            Resturant site = resturants.get(i);
+            Restaurant site = resturants.get(i);
             Sites[i]=site.getType();
         }
         Arrays.sort(Sites);
@@ -276,7 +276,7 @@ public class Controller extends Application {
 
         return sites;
     }
-    public ArrayList<Resturant> getRestaurants(){
+    public ArrayList<Restaurant> getRestaurants(){
         return resturants;
     }
 
@@ -285,7 +285,7 @@ public class Controller extends Application {
         int counter=0;
         for (int i=0; i<resturants.size(); i++)
         {
-            Resturant site = resturants.get(i);
+            Restaurant site = resturants.get(i);
             if (site.getType().equals(type))
             {
                 counter++;
@@ -295,7 +295,7 @@ public class Controller extends Application {
         String[] dummy = new String[counter];
         for (int k=0; k<resturants.size(); k++)
         {
-            Resturant site = resturants.get(k);
+            Restaurant site = resturants.get(k);
             if (site.getType().equals(type))
             {
                 dummy[counter2]=site.getName();
@@ -364,7 +364,7 @@ public class Controller extends Application {
         String[] dummy = new String[3];
         for (int i=0; i<resturants.size(); i++)
         {
-            Resturant site = resturants.get(i);
+            Restaurant site = resturants.get(i);
             if (site.getName().equals(name))
             {
                 dummy[0]=site.getAddress();
@@ -424,7 +424,7 @@ public class Controller extends Application {
 
     //get Array list
 
-    public ArrayList<Resturant> getResturantsDisplay() {
+    public ArrayList<Restaurant> getResturantsDisplay() {
         return resturantsDisplay;
     }
 
@@ -466,7 +466,7 @@ public class Controller extends Application {
     //Basically it adds all resturants of a certain type to an ArrayList
     //Next 2 also do the same thing for different objects
 
-    public ArrayList<Resturant> getResturantsFromName(String type)
+    public ArrayList<Restaurant> getResturantsFromName(String type)
     {
         for (int i=0; i<resturants.size(); i++)
         {
@@ -558,7 +558,7 @@ public class Controller extends Application {
 
     //permuatation method to show all permutations of 3 given sets of ArrayLists
 
-    public ArrayList<ArrayList<Itenerary>> permutate(ArrayList<Resturant> res, ArrayList<Education> edu, ArrayList<Entertainment> ent)
+    public ArrayList<ArrayList<Itenerary>> permutate(ArrayList<Restaurant> res, ArrayList<Education> edu, ArrayList<Entertainment> ent)
     {
         int counter=0;
 
@@ -751,7 +751,7 @@ public class Controller extends Application {
         return null;
     }
 
-    public Resturant getObjectFromResturantName(String name)
+    public Restaurant getObjectFromResturantName(String name)
     {
         for (int i=0; i<resturants.size(); i++)
         {
@@ -867,7 +867,7 @@ public class Controller extends Application {
         return arjunEntertainment;
     }
 
-    public ArrayList<Resturant> getArjunResturant() {
+    public ArrayList<Restaurant> getArjunResturant() {
         return arjunResturant;
     }
 
@@ -986,38 +986,29 @@ public class Controller extends Application {
             }
         }
     }
-/*
+
     public ArrayList<ArrayList<Itenerary>> edenPermutate(ArrayList<Itenerary>it){
         ArrayList<ArrayList<Itenerary>> combinations = new ArrayList<ArrayList<Itenerary>>();
-        ArrayList<Itenerary> option = new ArrayList<Itenerary>();
-        for (int i = 0;i<it.size();i++){
-            for (int j = 0;j<it.size();j++){
-                for (int k = 0;k<it.size();k++){
-                    option.add(it.get(i));
-                    option.add(it.get(j));
-                    option.add(it.get(k));
-                    for (int w =1;w<option.size();w++){
-                        if (option.get(w).equals(option.get(w-1))){
-                            option.remove(w);
-                        }
-                    }
-                    if (option.size()==3){
-                        if (option.get(0).equals(option.get(2))){
-                            option.remove(2);
-                        }
-                    }
-                    combinations.add(option);
-                }
+        for (int r = 0;r<it.size();r++) {
+            ArrayList<Itenerary> option = new ArrayList<Itenerary>();
+            for (int i = r; i < it.size()+r; i++) {
+                option.add(it.get(i % it.size()));
             }
+            combinations.add(option);
+            Log.d("after first for loop",option.toString());
         }
         return combinations;
     }
-*/
+
 
     //setter and getter method
     public void addItemToAlexsItenerary(ArrayList<Itenerary> itLives)
     {
         alexsItenerary.add(itLives);
+    }
+
+    public void removeItemFromAlexsIteneray(ArrayList<Itenerary>itLives){
+        alexsItenerary.remove(itLives);
     }
 
     public ArrayList<ArrayList<Itenerary>> getAlexsItenerary() {

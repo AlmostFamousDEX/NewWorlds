@@ -82,9 +82,11 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
                     }
                     else
                         Log.d("welp","idk what the problem is");
-
-                    //^^this method will be made
                 }
+                if (!((CheckBox) view).isChecked()){
+                    aController.removeItemFromAlexsIteneray(chosenItinerary);
+                }
+
             }
         });
     }

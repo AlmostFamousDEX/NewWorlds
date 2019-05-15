@@ -15,6 +15,9 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
+/**
+ * This class creates Recycler Views for each category from which users can select places to add to their itinerary
+ */
 public class RecyclerActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView1;
@@ -55,10 +58,10 @@ public class RecyclerActivity extends AppCompatActivity {
 
         // Declare some data - just use current time for now
         final Controller aController = (Controller) getApplicationContext();
-        ArrayList<Resturant> restaurantData = aController.getRestaurants();
+        ArrayList<Restaurant> restaurantData = aController.getRestaurants();
         Log.d("NUMBER OF RESTAURANTS", String.valueOf(restaurantData.size()));
 
-        ArrayList<Resturant> selectedRestaurants = aController.getResturantsFromName(aController.getCurrentResturantType());
+        ArrayList<Restaurant> selectedRestaurants = aController.getResturantsFromName(aController.getCurrentResturantType());
         ArrayList<Entertainment> selectedEntertainment = aController.getEntertainmentSitesFromType(aController.getCurrentEntertainmentType());
         ArrayList<Education> selectedEducation = aController.getEducationSitesFromType(aController.getCurrentEducationType());
         //ArrayList<Place> selectedEverything = aController.getPlacesfromTypes?(aController.getCurrentType()); //idk if this is possible???
@@ -84,11 +87,11 @@ public class RecyclerActivity extends AppCompatActivity {
                 //educations = (ArrayList<String>) bundle.get("Array List Education!!");
                 Intent intent=new Intent(RecyclerActivity.this,RecyclerItinerariesActivity.class);
                 //Intent intent2 = new Intent(mContext,RecyclerActivity.class);
-                intent.putExtra("I hope this works!!",aController.getArjunEducation());
+                intent.putExtra("Arjun Education",aController.getArjunEducation());
                 Log.d("yay",aController.getArjunEducation().toString());
-                intent.putExtra("I hope this works!!2",aController.getArjunEntertainment());
+                intent.putExtra("Arjun Entertainment",aController.getArjunEntertainment());
                 Log.d("yay2",aController.getArjunEntertainment().toString());
-                intent.putExtra("I hope this works!!3",aController.getArjunResturant());
+                intent.putExtra("Arjun Restaurant",aController.getArjunResturant());
                 Log.d("yay3",aController.getArjunResturant().toString());
 
                 startActivity(intent);

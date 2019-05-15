@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Resturant> resturants = new ArrayList<Resturant>();
+    private ArrayList<Restaurant> resturants = new ArrayList<Restaurant>();
     private ArrayList<Entertainment> entertainment = new ArrayList<Entertainment>();
     private ArrayList<Education> education = new ArrayList<Education>();
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i=0; i<resturants.size(); i++)
         {
-            Resturant diner = resturants.get(i);
+            Restaurant diner = resturants.get(i);
             Diners[i]=diner.getType();
         }
         Arrays.sort(Diners);
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                     String[] fields = line.split(",");
 
                     //read data
-                    resturants.add(new Resturant(fields[0],fields[1],fields[2],fields[3],fields[4]));
+                    resturants.add(new Restaurant(fields[0],fields[1],fields[2],fields[3],fields[4]));
                 }
                 else {
                     skip = true;

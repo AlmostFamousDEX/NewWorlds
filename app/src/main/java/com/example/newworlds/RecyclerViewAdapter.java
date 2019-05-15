@@ -22,10 +22,10 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     public static final String TAG="RecyclerViewAdapter";
 
-    private ArrayList<Resturant> allRestaurants;
+    private ArrayList<Restaurant> allRestaurants;
     private Context mContext;
 
-    public RecyclerViewAdapter(ArrayList<Resturant> data, Context context){
+    public RecyclerViewAdapter(ArrayList<Restaurant> data, Context context){
         allRestaurants=data;
         mContext=context;
     }
@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG,"onBindViewHolder: called");
-        Resturant restaurant = allRestaurants.get(position);
+        Restaurant restaurant = allRestaurants.get(position);
         holder.Name.setText(restaurant.getName());
         holder.Type.setText(restaurant.getType());
         holder.Address.setText(restaurant.getAddress());

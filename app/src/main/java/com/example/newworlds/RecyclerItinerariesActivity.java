@@ -29,13 +29,13 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
 
         final Controller aController = (Controller) getApplicationContext();
         Bundle bundle = getIntent().getExtras();
-        ArrayList<Education> educations2 = (ArrayList<Education>) bundle.get("I hope this works!!");
-        ArrayList<Entertainment> entertainments2 = (ArrayList<Entertainment>) bundle.get("I hope this works!!2");
-        ArrayList<Resturant> restaurants2 = (ArrayList<Resturant>) bundle.get("I hope this works!!3");
+        ArrayList<Education> educations2 = (ArrayList<Education>) bundle.get("Arjun Education");
+        ArrayList<Entertainment> entertainments2 = (ArrayList<Entertainment>) bundle.get("Arjun Entertainment");
+        ArrayList<Restaurant> restaurants2 = (ArrayList<Restaurant>) bundle.get("Arjun Restaurant");
 
         ArrayList<Education> education3 = new ArrayList<Education>();
         ArrayList<Entertainment> entertainment3 = new ArrayList<Entertainment>();
-        ArrayList<Resturant> restaurant3 =new ArrayList<Resturant>();
+        ArrayList<Restaurant> restaurant3 =new ArrayList<Restaurant>();
 
         if (educations2!=null) {
             Log.d("does this workkkkk???", Arrays.toString(educations2.toArray()));
@@ -52,27 +52,6 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
             restaurant3 = restaurants2;
         }
 
-
-        //ArrayList<Education> itinerariesEducations = new ArrayList<Education>();
-        //ArrayList<Entertainment> itinerariesEntertainments = new ArrayList<Entertainment>();
-        /*
-        ArrayList<Resturant> itinerariesRestaurants = new ArrayList<Resturant>();
-
-        /*
-        for (int j = 0;j<itinerariesEducations.size();j++){
-            itinerariesEducations.set(j,aController.getObjectFromEducationName(educations2.get(j)));
-        }
-
-        for (int j = 0;j<itinerariesEntertainments.size();j++){
-            itinerariesEntertainments.set(j,aController.getObjectFromEntertainmentName(entertainments2.get(j)));
-        }
-
-        for (int j = 0;j<itinerariesRestaurants.size();j++){
-            itinerariesRestaurants.set(j,aController.getObjectFromResturantName(restaurants.get(j)));
-        }
-
-        */
-
         ArrayList<ArrayList<Itenerary>> itineraries = new ArrayList<ArrayList<Itenerary>>();
         ArrayList<ArrayList<Itenerary>> dummy = new ArrayList<ArrayList<Itenerary>>();
         ArrayList<ArrayList<Itenerary>> edenDummy = new ArrayList<ArrayList<Itenerary>>();
@@ -86,7 +65,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
              itineraries = aController.permutate(restaurant3,education3,entertainment3);
 
              //I commented this out for now....but the permutate2 method has errors
-
+/*
              for (int i=0; i<itineraries.size(); i++)
              {
                  ArrayList<ArrayList<Itenerary>> dummy2 = new ArrayList<>();
@@ -97,12 +76,12 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
                  }
 
              }
+*/
 
-/*
              for (int i=0;i<itineraries.size();i++){
                  edenDummy = aController.edenPermutate(itineraries.get(i));
              }
-*/
+
 
         }
 
@@ -115,7 +94,7 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         Log.d("wut",itineraries.toString());
         Log.d("lolol",dummy.toString());
 
-        adapter = new RecycleViewAdapterItineraries(dummy, this);
+        adapter = new RecycleViewAdapterItineraries(edenDummy, this);
         recyclerView.setAdapter(adapter);
 
         final Button buttonOp2 = (Button) findViewById(R.id.final_itinerary);

@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * This class represents an Education site consisting of a name, an address, a type, closing hours, and opening hours.
+ * This class represents a Restaurant consisting of a name, an address, a type, closing hours, and opening hours.
  */
-public class Education implements Parcelable {
+public class Restaurant implements Parcelable {
     private String name;
     private String address;
     private String type;
@@ -14,14 +14,14 @@ public class Education implements Parcelable {
     private String chours;
 
     /**
-     * Creates a new Education object
-     * @param name is the name of the Education site
-     * @param type is the type of Education site
-     * @param address is the address of the Education site
-     * @param ohours is the opening hours of the Education site
-     * @param chours is the closing hours of the Education site
+     * Creates a new Restaurant object
+     * @param name is the name of the Restaurant
+     * @param type is the type of Restaurant
+     * @param address is the address of the Restaurant
+     * @param ohours is the opening hours of the Restaurant
+     * @param chours is the closing hours of the Restaurant
      */
-    public Education (String name,String type, String address, String ohours, String chours)
+    public Restaurant(String name, String type, String address, String ohours, String chours)
     {
         this.name=name;
         this.address =address;
@@ -31,7 +31,7 @@ public class Education implements Parcelable {
     }
 
     /**
-     * Accesses the name of the Education site
+     * Accesses the name of the restaurant
      * @return the name
      */
     public String getName()
@@ -40,7 +40,7 @@ public class Education implements Parcelable {
     }
 
     /**
-     * Accesses the address of the Education site
+     * Accesses the address of the restaurant
      * @return the address
      */
     public String getAddress()
@@ -49,7 +49,7 @@ public class Education implements Parcelable {
     }
 
     /**
-     * Accesses the type of Education site
+     * Accesses the type of the restaurant
      * @return the type
      */
     public String getType() {
@@ -57,7 +57,7 @@ public class Education implements Parcelable {
     }
 
     /**
-     * Accesses the closing hours of the Education site
+     * Accesses the closing hours of the restaurant
      * @return the closing hours
      */
     public String getChours() {
@@ -65,14 +65,22 @@ public class Education implements Parcelable {
     }
 
     /**
-     * Accesses the opening hours of the Education site
+     * Accesses the opening hours of the restaurant
      * @return the opening hours
      */
     public String getOhours() {
         return ohours;
     }
 
-    //The following methods make the Education site parcelable.
+    /**
+     * Allows the restaurant to be converted to a string
+     * @return the name
+     */
+    public String toString(){
+            return name;
+    }
+
+    //The following methods make the Restaurant parcelable.
     @Override
     public int describeContents() {
         return 0;
@@ -83,24 +91,16 @@ public class Education implements Parcelable {
         dest.writeStringArray(new String[] {name,address,type,chours,ohours});
     }
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator(){
-        public Education createFromParcel(Parcel in){
+        @Override
+        public Restaurant createFromParcel(Parcel in) {
             String[] string = in.createStringArray();
-            Education toReturn = new Education(string[0],string[1],string[2],string[3],string[4]);
+            Restaurant toReturn = new Restaurant(string[0],string[1],string[2],string[3],string[4]);
             return toReturn;
         }
 
         @Override
-        public Education[] newArray(int size) {
-            return new Education[size];
+        public Restaurant[] newArray(int size) {
+            return new Restaurant[size];
         }
     };
-
-    /**
-     * Allows the Education site to be converted to a String
-     * @return the name
-     */
-    public String toString(){
-        return name;
-    }
-
 }

@@ -22,14 +22,14 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<RecyclerViewAdapterRestaurant.ViewHolder> {
     public static final String TAG = "RecyclerViewAdapter";
-    private ArrayList<Resturant> allRestaurants;
+    private ArrayList<Restaurant> allRestaurants;
     //private ArrayList<Resturant> itineraryRestaurants;
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
     private ArrayList<String> arr2= new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
-    public RecyclerViewAdapterRestaurant(ArrayList<Resturant> data, Context context) {
+    public RecyclerViewAdapterRestaurant(ArrayList<Restaurant> data, Context context) {
         //mPreferencesCategories=preferencesCategories;
         //mChoices=choices;
         //restaurantData=idk;
@@ -55,7 +55,7 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
-        final Resturant restaurant = allRestaurants.get(position);
+        final Restaurant restaurant = allRestaurants.get(position);
         //Entertainment entertainment = allEntertainments.get(position);
         //Education education = allEducations.get(position);
         holder.Name.setText(restaurant.getName());
