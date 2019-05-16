@@ -18,6 +18,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+/**
+ * This class is not currently being used.
+ */
 public class MapsActivityTester extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;

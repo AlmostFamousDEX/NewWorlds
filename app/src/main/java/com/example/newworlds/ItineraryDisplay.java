@@ -3,6 +3,9 @@ package com.example.newworlds;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * This class is not being used. Originally, it was being used to display the itinerary.
+ */
 public class ItineraryDisplay extends AppCompatActivity {
 
     final Controller aController = (Controller) getApplicationContext();
