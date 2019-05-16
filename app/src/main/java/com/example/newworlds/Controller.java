@@ -914,7 +914,7 @@ public class Controller extends Application {
     public ArrayList<Itenerary> getIt() {
         return it;
     }
-
+/*
     //permutation method for an Itenerary ArrayList
     public ArrayList<ArrayList<Itenerary>> permutate2(ArrayList<Itenerary> it)
     {
@@ -949,6 +949,7 @@ public class Controller extends Application {
                  * the original ArrayList passed as an argument
                 *
                 * */
+/*
                 char c = str.charAt(k);
                 int z = Character.getNumericValue(c);
                 alexDummyIRanOutOfOriginalNames.add(it.get(z));
@@ -986,7 +987,7 @@ public class Controller extends Application {
             }
         }
     }
-
+/*
     public ArrayList<ArrayList<Itenerary>> edenPermutate(ArrayList<Itenerary>it){
         ArrayList<ArrayList<Itenerary>> combinations = new ArrayList<ArrayList<Itenerary>>();
         for (int r = 0;r<it.size();r++) {
@@ -999,7 +1000,7 @@ public class Controller extends Application {
         }
         return combinations;
     }
-
+*/
 
     //setter and getter method
     public void addItemToAlexsItenerary(ArrayList<Itenerary> itLives)
