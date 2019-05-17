@@ -55,6 +55,13 @@
     <string name="two">2. </string>
     <string name="three">3. </string>
 
+    <string name="checkBox">Add to My Itinerary!</string>
+    <string name="checkBox2">Choose this Itinerary!</string>
+
+    <string name="yourItinerary">Your Itinerary!</string>
+    <string name="itineraries">Itineraries</string>
+    <string name="finalItinerary">Final Itinerary</string>
+
     <string name="spin">Spinner Example</string>
     <string-array name="food">
         <item>Italian</item>
