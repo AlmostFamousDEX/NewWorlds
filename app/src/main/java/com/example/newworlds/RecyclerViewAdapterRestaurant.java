@@ -1,10 +1,6 @@
 package com.example.newworlds;
 
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.support.v7.widget.LinearLayoutManager;
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -15,25 +11,26 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.example.newworlds.Controller;
 
 import java.util.ArrayList;
 
+/**
+ * This class is the adapter for the restaurant RecyclerView
+ */
 public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<RecyclerViewAdapterRestaurant.ViewHolder> {
     public static final String TAG = "RecyclerViewAdapter";
     private ArrayList<Restaurant> allRestaurants;
-    //private ArrayList<Resturant> itineraryRestaurants;
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
     private ArrayList<String> arr2= new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
+    /**
+     * Creates a restaurant RecyclerView
+     * @param data array list of restaurants created from the type the user selected
+     * @param context the context of the class
+     */
     public RecyclerViewAdapterRestaurant(ArrayList<Restaurant> data, Context context) {
-        //mPreferencesCategories=preferencesCategories;
-        //mChoices=choices;
-        //restaurantData=idk;
-        //myDataSet2=idk2;
         allRestaurants = data;
         for (int i=0; i<allRestaurants.size(); i++)
         {
@@ -56,8 +53,6 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
         final Restaurant restaurant = allRestaurants.get(position);
-        //Entertainment entertainment = allEntertainments.get(position);
-        //Education education = allEducations.get(position);
         holder.Name.setText(restaurant.getName());
         holder.Type.setText(restaurant.getType());
         holder.Address.setText(restaurant.getAddress());
@@ -89,25 +84,10 @@ public class RecyclerViewAdapterRestaurant extends RecyclerView.Adapter<Recycler
                     }
                     aController.addItemToArjunResturant(alexString);
 
-                    //String str=education.getName();
-                    //Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
-                    //intent.putExtra("Array List Restaurant!!",alexString);
-                    //mContext.startActivity(intent);
                 }
             }
 
         });
-/*
-        holder.selectRestaurant.setOnClickListener(new View.onClickListener() {
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    itineraryRestaurants.add(allRestaurants.get(getAdapterPosition()));
-                }
-            }
-
-        });
-        //we still have to debug the onClick method and onClickListeners for the check boxes to work.
-        */
     }
 
     @Override

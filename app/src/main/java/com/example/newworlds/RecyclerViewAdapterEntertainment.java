@@ -1,12 +1,7 @@
 package com.example.newworlds;
 
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.support.v7.widget.LinearLayoutManager;
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,15 +14,22 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This class is the adapter for the entertainment RecyclerView
+ */
 public class RecyclerViewAdapterEntertainment extends RecyclerView.Adapter<RecyclerViewAdapterEntertainment.ViewHolder> {
     public static final String TAG="RecyclerViewAdapter";
     private ArrayList<Entertainment> allEntertainment;
-    //private ArrayList<Entertainment> itineraryEntertainment;
     private Context mContext;
     private ArrayList<String> arr= new ArrayList<String>();
     private ArrayList<String> arr2= new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
+    /**
+     * Creates an entertainment RecyclerView
+     * @param data array list of entertainment sites created from the type the user selected
+     * @param context the context of the class
+     */
     public RecyclerViewAdapterEntertainment(ArrayList<Entertainment> data, Context context){
         allEntertainment=data;
         for (int i=0; i<allEntertainment.size(); i++)
@@ -82,11 +84,6 @@ public class RecyclerViewAdapterEntertainment extends RecyclerView.Adapter<Recyc
                     }
                     aController.addItemToArjunEntertainment(alexString);
 
-                    //String str=entertainment.getName();
-                    //Intent intent = new Intent(mContext,RecyclerItinerariesActivity.class);
-                    //intent.putExtra("Array List Entertainment!!",alexString);
-                    //mContext.startActivity(intent);
-
                 }
             }
 
@@ -97,7 +94,6 @@ public class RecyclerViewAdapterEntertainment extends RecyclerView.Adapter<Recyc
     @Override
     public int getItemCount() {
         return allEntertainment.size();
-        //return myDataSet2.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

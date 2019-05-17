@@ -19,7 +19,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
- * This class is not currently being used.
+ * This class is not currently being used. As a future extension, it would be used to test the Google maps functionality.
  */
 public class MapsActivityTester extends FragmentActivity implements OnMapReadyCallback {
 

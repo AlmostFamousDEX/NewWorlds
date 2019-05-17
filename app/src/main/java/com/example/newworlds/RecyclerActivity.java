@@ -16,7 +16,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 /**
- * This class creates Recycler Views for each category from which users can select places to add to their itinerary
+ * This class creates RecyclerViews for each category from which users can select places to add to their itinerary
  */
 public class RecyclerActivity extends AppCompatActivity {
 
@@ -29,26 +29,29 @@ public class RecyclerActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager1;
     private RecyclerView.LayoutManager layoutManager2;
     private RecyclerView.LayoutManager layoutManager3;
-    private ArrayList<String> educations;
-    private ArrayList<String> entertainment;
-    private BroadcastReceiver mMessageReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
 
+        /**
+         * Sets up three RecyclerViews for the restaurants, entertainment sites, and education sites
+         */
         recyclerView1 = (RecyclerView) findViewById(R.id.recyclerRestaurants);
         recyclerView2 = (RecyclerView) findViewById(R.id.recyclerEntertainment);
         recyclerView3 = (RecyclerView) findViewById(R.id.recyclerEducation);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
+        /**
+         * Improves the performance since changes in content do not change the layout size of the RecyclerView
+         */
         recyclerView1.setHasFixedSize(true);
         recyclerView2.setHasFixedSize(true);
         recyclerView3.setHasFixedSize(true);
 
-        // use a linear layout manager
+        /**
+         * Sets up the linear layout manager
+         */
         layoutManager1 = new LinearLayoutManager(this);
         layoutManager2 = new LinearLayoutManager(this);
         layoutManager3 = new LinearLayoutManager(this);
@@ -56,37 +59,34 @@ public class RecyclerActivity extends AppCompatActivity {
         recyclerView2.setLayoutManager(layoutManager2);
         recyclerView3.setLayoutManager(layoutManager3);
 
-        // Declare some data - just use current time for now
+        /**
+         * Creates three array lists of each placed based on the types selected in the Preferences ACtivity
+         */
         final Controller aController = (Controller) getApplicationContext();
-        ArrayList<Restaurant> restaurantData = aController.getRestaurants();
-        Log.d("NUMBER OF RESTAURANTS", String.valueOf(restaurantData.size()));
-
         ArrayList<Restaurant> selectedRestaurants = aController.getResturantsFromName(aController.getCurrentResturantType());
         ArrayList<Entertainment> selectedEntertainment = aController.getEntertainmentSitesFromType(aController.getCurrentEntertainmentType());
         ArrayList<Education> selectedEducation = aController.getEducationSitesFromType(aController.getCurrentEducationType());
-        //ArrayList<Place> selectedEverything = aController.getPlacesfromTypes?(aController.getCurrentType()); //idk if this is possible???
 
-        //IS IT POSSIBLE TO GET THESE METHODS? ^^^
 
-        // specify an adapter
-        //adapter = new RecyclerViewAdapter(selectedRestaurants,selectedEntertainment, selectedEducation, this);
-        adapter1 = new RecyclerViewAdapterRestaurant(selectedRestaurants, this); //this one works to some extent
+        /**
+         * Creates and sets three new adapters for displaying restaurants, entertainment sites, and education sites
+         */
+        adapter1 = new RecyclerViewAdapterRestaurant(selectedRestaurants, this);
         adapter2 = new RecyclerViewAdapterEntertainment(selectedEntertainment, this);
         adapter3 = new RecyclerViewAdapterEducation(selectedEducation, this);
         recyclerView1.setAdapter(adapter1);
         recyclerView2.setAdapter(adapter2);
         recyclerView3.setAdapter(adapter3);
 
-        //ArrayList<Education> work = aController.getArjunEducation();
-
-
+        /**
+         * Directs to the Recycler Itineraries Activity Class and passes in the places selected when
+         * the "Generate Itineraries" Button is clicked
+         */
         final Button buttonOp1 = (Button) findViewById(R.id.genButton);
         buttonOp1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Bundle bundle = getIntent().getExtras();
-                //educations = (ArrayList<String>) bundle.get("Array List Education!!");
+
                 Intent intent=new Intent(RecyclerActivity.this,RecyclerItinerariesActivity.class);
-                //Intent intent2 = new Intent(mContext,RecyclerActivity.class);
                 intent.putExtra("Arjun Education",aController.getArjunEducation());
                 Log.d("yay",aController.getArjunEducation().toString());
                 intent.putExtra("Arjun Entertainment",aController.getArjunEntertainment());

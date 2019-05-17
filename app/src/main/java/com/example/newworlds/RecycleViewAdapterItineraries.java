@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This class is the adapter for the itineraries RecyclerView
+ */
 public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleViewAdapterItineraries.ViewHolder> {
     public static final String TAG = "RecyclerViewAdapter";
     private ArrayList<ArrayList<Itenerary>> allItineraries;
@@ -24,8 +26,12 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
     private ArrayList<String> arr2 = new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
-    //private SparseBooleanArray itemStateArray = new SparseBooleanArray();
-
+    /**
+     * Creates an itineraries RecyclerView
+     * @param data the array list of array list of itinerary objects (restaurants, entertainment sites,
+     *             education sites) which were selected by the user
+     * @param context the context of the class
+     */
     public RecycleViewAdapterItineraries(ArrayList<ArrayList<Itenerary>> data, Context context) {
         allItineraries = data;
         mContext = context;
@@ -48,19 +54,19 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
             if (i==0){
                 holder.place1.setText(mContext.getResources().getString(R.string.one) + itinerary.get(i).getName());
                 holder.address1.setText(itinerary.get(i).getType());
-                Log.d("i'm quite confused", itinerary.get(i).getType());
+                Log.d("first place", itinerary.get(i).getType());
             }
             else
                 if (i==1){
                     holder.place2.setText(mContext.getResources().getString(R.string.two) + itinerary.get(i).getName());
                     holder.address2.setText(itinerary.get(i).getType());
-                    Log.d("i'm quite confused", itinerary.get(i).getType());
+                    Log.d("second place", itinerary.get(i).getType());
                 }
                 else
                     if (i==2){
                         holder.place3.setText(mContext.getResources().getString(R.string.three) + itinerary.get(i).getName());
                         holder.address3.setText(itinerary.get(i).getType());
-                        Log.d("i'm quite confused", itinerary.get(i).getType());
+                        Log.d("third place", itinerary.get(i).getType());
                     }
         }
         final Controller aController = (Controller) mContext.getApplicationContext();
@@ -78,10 +84,10 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
                     }
                     aController.addItemToAlexsItenerary(chosenItinerary);
                     if (aController.getAlexsItenerary()!=null){
-                        Log.d("i'm tired of this",aController.getAlexsItenerary().toString());
+                        Log.d("Alex Itinerary",aController.getAlexsItenerary().toString());
                     }
                     else
-                        Log.d("welp","idk what the problem is");
+                        Log.d("well","idk what the problem is");
                 }
                 if (!((CheckBox) view).isChecked()){
                     aController.removeItemFromAlexsIteneray(chosenItinerary);
@@ -90,17 +96,6 @@ public class RecycleViewAdapterItineraries extends RecyclerView.Adapter<RecycleV
             }
         });
     }
-
-/*
-        holder.selectItinerary.setOnClickListener(new View.onClickListener() {
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    chosenItinerary.add(allItineraries.get(getAdapterPosition()));
-                }
-            }
-        });
-        //we still have to debug the onClick method and onClickListeners for the check boxes to work.
-        */
 
 
     @Override

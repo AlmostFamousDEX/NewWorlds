@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * This class is currently not being used. It was originally used to test the RecyclerView
+ */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     public static final String TAG="RecyclerViewAdapter";
 

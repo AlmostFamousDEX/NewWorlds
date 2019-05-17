@@ -15,6 +15,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * This class is used to direct to the preferences activity screen. It contains code for the spinners from which
+ * users can select types.
+ */
 public class PreferencesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,41 +32,15 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
         final ArrayList<String> entertainmentType = new ArrayList<>();
         final ArrayList<String> educationType = new ArrayList<>();
 
-        //String[] restaurantType;
-        //String[] entertainmentType;
-        //String[] educationType;
-
-        /*
-        String[] diners = bundle.getStringArray("diner");
-        if (diners[0]!="")
-        {
-            Log.d("MyTest", "good1");
-        }
-        String[] shows = bundle.getStringArray("show");
-        if (shows[0]!="")
-        {
-            Log.d("MyTest", "good2");
-        }
-        String[] sites = bundle.getStringArray("site");
-        if (sites[0]!="")
-        {
-            Log.d("MyTest", "good3");
-        }
-        */
-
-        //String[] diners1 = aController.getResturantType();
-        //String[] shows1 = aController.getEntertainmentType();
-        //String[] sites1 = aController.getEducationType();
-
-
-
         final Controller aController = (Controller) getApplicationContext();
 
         String[] diners=aController.getResturantType();
         String[] shows=aController.getEntertainmentType();
         String[] sites=aController.getEducationType();
 
-
+        /**
+         * This code sets up the first spinner, fills it with restaurant types, and gets the type the user selected.
+         */
         Spinner spinner = findViewById(R.id.foodChoices);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, diners);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -73,9 +51,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
                 String foodSelection = parent.getItemAtPosition(position).toString();
                 final Controller aController = (Controller) getApplicationContext();
                 aController.setCurrentResturantType(foodSelection);
-                //String text2 = parent.getSelectedItem().toString();
                 Log.d("foodSelection",foodSelection);
-                //Log.d("my selectionnnn",text2);
                 Toast.makeText(parent.getContext(), foodSelection, Toast.LENGTH_SHORT).show();
                 restaurantType.add(foodSelection);
             }
@@ -86,6 +62,10 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
+
+        /**
+         * This code sets up the second spinner, fills it with entertainment types, and gets the type the user selected.
+         */
         Spinner spinner2 = findViewById(R.id.entertainmentChoices);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(PreferencesActivity.this,android.R.layout.simple_spinner_item, shows);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -94,9 +74,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String entertainmentSelection = parent.getItemAtPosition(position).toString();
                 aController.setCurrentEntertainmentType(entertainmentSelection);
-                //String text2 = parent.getSelectedItem().toString();
                 Log.d("entertainmentSelection",entertainmentSelection);
-                //Log.d("my selectionnnn",text2);
                 Toast.makeText(parent.getContext(), entertainmentSelection, Toast.LENGTH_SHORT).show();
                 entertainmentType.add(entertainmentSelection);
             }
@@ -107,6 +85,9 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             }
         });
 
+        /**
+         * This code sets up the third spinner, fills it with education types, and gets the type the user selected.
+         */
         Spinner spinner3 = findViewById(R.id.educationalChoices);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(PreferencesActivity.this, android.R.layout.simple_spinner_item, sites);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -115,9 +96,7 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String educationSelection = parent.getItemAtPosition(position).toString();
                 aController.setCurrentEducationType(educationSelection);
-                //String text2 = parent.getSelectedItem().toString();
                 Log.d("educationSelection",educationSelection);
-                //Log.d("my selectionnnn",text2);
                 Toast.makeText(parent.getContext(), educationSelection, Toast.LENGTH_SHORT).show();
                 educationType.add(educationSelection);
             }
@@ -130,9 +109,13 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
 
 
 
-        //not fixed
         final Button buttonOp = (Button) findViewById(R.id.nextOp);
         buttonOp.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This button directs to the RecyclerActivity class, which displays places to the user based on their
+             * selections from the spinners
+             * @param v the view
+             */
             public void onClick(View v) {
                 Intent intent=new Intent(PreferencesActivity.this,RecyclerActivity.class);
                 startActivity(intent);
@@ -151,20 +134,4 @@ public class PreferencesActivity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-/*
-    private void initRecyclerView(){
-        //Log.d(TAG,"initRecyclerView: init recyclerview.");
-        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, )
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-    private void initRecyclerView(){
-        //Log.d(TAG,"initRecyclerView: init recyclerview.");
-        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-*/
 }

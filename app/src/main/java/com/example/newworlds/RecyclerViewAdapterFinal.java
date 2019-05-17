@@ -14,12 +14,19 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This class is the adapter for the final itinerary RecyclerView
+ */
 public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewAdapterFinal.ViewHolder>{
     public static final String TAG="RecyclerViewAdapter";
-    //private ArrayList<ArrayList<Itenerary>> allItineraries;
     private ArrayList<ArrayList<Itenerary>> lastItinerary;
     private Context mContext;
 
+    /**
+     * Creates a final itinerary RecyclerView
+     * @param data array list of array list of itinerary objects selected from the itineraries RecyclerView
+     * @param context the context of the class
+     */
     public RecyclerViewAdapterFinal(ArrayList<ArrayList<Itenerary>> data, Context context){
         lastItinerary=data;
         mContext=context;
@@ -42,24 +49,21 @@ public class RecyclerViewAdapterFinal extends RecyclerView.Adapter<RecyclerViewA
             if (i==0){
                 holder.place1.setText(mContext.getResources().getString(R.string.one) + finalItinerary.get(i).getName());
                 holder.address1.setText(finalItinerary.get(i).getAddress());
-                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+                Log.d("first place", finalItinerary.get(i).getName());
             }
             else
             if (i==1){
                 holder.place2.setText(mContext.getResources().getString(R.string.two) + finalItinerary.get(i).getName());
                 holder.address2.setText(finalItinerary.get(i).getAddress());
-                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+                Log.d("second place", finalItinerary.get(i).getName());
             }
             else
             if (i==2){
                 holder.place3.setText(mContext.getResources().getString(R.string.three) + finalItinerary.get(i).getName());
                 holder.address3.setText(finalItinerary.get(i).getAddress());
-                Log.d("i'm quite confused", finalItinerary.get(i).getName());
+                Log.d("third place", finalItinerary.get(i).getName());
             }
         }
-        //holder.place1.setText(finalItinerary.get(0).getName());
-        //holder.place2.setText(finalItinerary.get(1).getName());
-        //holder.place3.setText(finalItinerary.get(2).getName());
 
     }
 

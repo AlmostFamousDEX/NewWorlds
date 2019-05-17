@@ -1,12 +1,7 @@
 package com.example.newworlds;
 
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.support.v7.widget.LinearLayoutManager;
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,6 +14,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This class is the adapter for the education RecyclerView
+ */
 public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerViewAdapterEducation.ViewHolder> {
     public static final String TAG="RecyclerViewAdapter";
     private ArrayList<Education> allEducation;
@@ -27,7 +25,11 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
     private ArrayList<String> arr2= new ArrayList<String>();
     private ArrayList<String> alexString = new ArrayList<String>();
 
-
+    /**
+     * Creates an education RecyclerView
+     * @param data array list of education sites created from the type the user selected
+     * @param context the context of the class
+     */
     public RecyclerViewAdapterEducation(ArrayList<Education> data, Context context){
         allEducation=data;
         for (int i=0; i<allEducation.size(); i++)
@@ -36,7 +38,6 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
             arr2.add("False");
         }
         mContext=context;
-        //hi
     }
 
     @Override
@@ -84,20 +85,10 @@ public class RecyclerViewAdapterEducation extends RecyclerView.Adapter<RecyclerV
 
                     aController.addItemToArjunEducation(alexString);
 
-
-                    //String str=education.getName();
-                    //Intent intent = new Intent(mContext,RecyclerActivity.class);
-                    //intent.putExtra("Array List Education!!",alexString);
-                    //mContext.startActivity(intent);
-/*
-
-                    */
                 }
             }
 
         });
-
-        //we still have to debug the onClick method and onClickListeners for the check boxes to work.
 
     }
 

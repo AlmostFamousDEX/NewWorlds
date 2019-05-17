@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
+/**
+ * This class is not currently being used. It was originally being used to direct to the options activity screen.
+ */
 public class OptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
