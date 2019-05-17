@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class is used to direct to the main screen (first screen) and contains some of the Controller
+ * methods
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Restaurant> resturants = new ArrayList<Restaurant>();
@@ -28,15 +32,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("Hello", "Alex is active");
-        Log.d("Sup","Hi this is Alex!!!!");
-        Log.d("tets","tets");
-        Log.d("test", "arjun test");
-        Log.d("test","once againn");
 
         resturants();
         entertainment();
         education();
+
+        /**
+         * Creates String arrays from Restaurant, Entertainment, and Education arrays
+         */
 
         final String[] Diners = new String[resturants.size()];
         final String[] Shows = new String[entertainment.size()];
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             Diners[i]=diner.getType();
         }
         Arrays.sort(Diners);
-        Log.d("stressed", String.valueOf(Diners));
+
         for (int i=0; i<entertainment.size(); i++)
         {
             Entertainment show = entertainment.get(i);
@@ -61,14 +64,11 @@ public class MainActivity extends AppCompatActivity {
             Sites[i]=site.getType();
         }
         Arrays.sort(Sites);
-/*
-        List<String> diners = new ArrayList<>();
-        List<String> shows = new ArrayList<>();
-        List<String> sites = new ArrayList<>();
-        */
+
+        /**
+         * Displays the array lists so that types do not repeat
+         */
         display(Diners);
-
-
 
         //restaurants
         int delete;
@@ -191,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] info1 = Diners;
 
+        /**
+         * Directs to the Preferences Activity class
+         */
         final Button planTrip = (Button) findViewById(R.id.planTripView);
         planTrip.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -203,6 +206,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Reads the restaurants CSV file
+     */
     public void resturants(){
         InputStream is = getResources().openRawResource(R.raw.restaurants);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -230,6 +236,10 @@ public class MainActivity extends AppCompatActivity {
             Log.wtf("MainActivity-restaurants","ERROR reading data on line: "+line);
         }
     }
+
+    /**
+     * Reads the entertainment CSV file
+     */
     public void entertainment(){
         InputStream is = getResources().openRawResource(R.raw.entertainment);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -257,6 +267,10 @@ public class MainActivity extends AppCompatActivity {
             Log.wtf("MainActivity","ERROR reading data on line: "+line);
         }
     }
+
+    /**
+     * Reads the education CSV file
+     */
     public void education(){
         InputStream is = getResources().openRawResource(R.raw.educational);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -284,14 +298,14 @@ public class MainActivity extends AppCompatActivity {
             Log.wtf("MainActivity","ERROR reading data on line: "+line);
         }
     }
+
+    /**
+     * displays the array list of Strings
+     * @param array an array list of strings
+     */
     public static void display(String[] array){
         for (int j=0;j<array.length;j++){
             Log.d("EdenAllen",array[j]);
-        }
-    }
-    public static void display2(String[] array){
-        for (int j=0;j<array.length;j++){
-            Log.d("AllenEden",array[j]);
         }
     }
 

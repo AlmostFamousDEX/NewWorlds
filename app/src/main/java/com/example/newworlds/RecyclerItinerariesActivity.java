@@ -61,17 +61,17 @@ public class RecyclerItinerariesActivity extends AppCompatActivity {
         ArrayList<Restaurant> restaurant3 = new ArrayList<Restaurant>();
 
         if (educations2 != null) {
-            Log.d("does this workkkkk???", Arrays.toString(educations2.toArray()));
+            Log.d("does this work?", Arrays.toString(educations2.toArray()));
             education3 = educations2;
         }
 
         if (entertainments2 != null) {
-            Log.d("does this workkkkk???2", Arrays.toString(entertainments2.toArray()));
+            Log.d("does this work?2", Arrays.toString(entertainments2.toArray()));
             entertainment3 = entertainments2;
         }
 
         if (restaurants2 != null) {
-            Log.d("does this workkkkk???3", Arrays.toString(restaurants2.toArray()));
+            Log.d("does this work?3", Arrays.toString(restaurants2.toArray()));
             restaurant3 = restaurants2;
         }
 
